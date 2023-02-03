@@ -23,10 +23,9 @@ An instagram clone developed with react-native.
 ## Install
 
 ```bash
-npm install
-git clone https://github.com/ezgiceylan/InstagramClone.git
-cd InstagramClone
-
+git clone https://github.com/lcdcustodio/p4gram.git
+cd p4gram
+yarn install
 ```
 ## Usage
 
