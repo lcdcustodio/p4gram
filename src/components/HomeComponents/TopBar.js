@@ -24,7 +24,7 @@ const TopBar = () => {
 
       <View style={styles.logoContainer}>
         <Image
-          source={require('../../../assets/images/instagram_text_logo.png')}
+          source={require('../../../assets/images/blueberry_text_logo_rev03.png')}         
           style={styles.icon}
         />
       </View>
