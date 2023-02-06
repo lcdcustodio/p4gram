@@ -113,7 +113,7 @@ const Login = ({navigation}) => {
             <View style={styles.bottom}>
               <View style={{flexDirection: 'row'}}>
                 <Text style={{fontSize: 12, color: 'grey', marginTop: 15}}>
-                  Hesabın yok mu?{' '}
+                  Não tem uma conta?{' '}
                 </Text>
                 <Text style={{...styles.help, marginTop: 15}}> Cadastro.</Text>
               </View>

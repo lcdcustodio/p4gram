@@ -10,9 +10,9 @@ const Bio = ({route}) => {
   return (
     <SafeAreaView>
       <View style={styles.bioContainer}>
-        <Text style={styles.userName}> {route ? route.name : 'CEYLAN'}</Text>
+        <Text style={styles.userName}> {route ? route.name : 'Anderson Águia'}</Text>
         <Text style={styles.bio}>
-          {route ? route.bio : 'Marmara Üniversitesi'}
+          {route ? route.bio : 'Atleta'}
         </Text>
       </View>
 
@@ -26,7 +26,7 @@ const Bio = ({route}) => {
           style={styles.edit}
           onPress={() => navigation.navigate('EditProfile')}>
           <View style={{alignItems: 'center'}}>
-            <Text style={styles.editText}>Profili Düzenle</Text>
+            <Text style={styles.editText}>Editar Perfil</Text>
           </View>
         </TouchableOpacity>
 

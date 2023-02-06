@@ -171,7 +171,7 @@ const Post = () => {
 
             <Text style={styles.likeText}>
               {checkLike(like, data.postName) ? data.like + 1 : data.like}{' '}
-              beğenme
+              curtidas
             </Text>
 
             <View style={{flexDirection: 'row', marginTop: 5}}>
@@ -191,10 +191,10 @@ const Post = () => {
                 alignItems: 'center',
               }}>
               <Image
-                source={require('../../../assets/images/profil.jpg')}
+                source={require('../../../assets/images/aguia_02.png')}
                 style={styles.profilImage}
               />
-              <Text style={{opacity: 0.8, color: 'grey'}}>Yorum ekle...</Text>
+              <Text style={{opacity: 0.8, color: 'grey'}}>Adicionar comentário...</Text>
             </View>
 
             <Text style={styles.time}>{data.time}</Text>
