@@ -73,8 +73,8 @@ const Comment = ({navigation, route}) => {
                         {data.comment}
                       </Text>
                       <View style={{flexDirection: 'row', marginTop: 5}}>
-                        <Text style={styles.answer}>Yanıtla</Text>
-                        <Text style={styles.answer}>Gönder</Text>
+                        <Text style={styles.answer}>Responder</Text>
+                        <Text style={styles.answer}>Enviar</Text>
                       </View>
                     </View>
                   </View>
@@ -97,10 +97,10 @@ const Comment = ({navigation, route}) => {
           <View style={{flexDirection: 'row', alignItems: 'center'}}>
             <Image
               style={styles.image}
-              source={require('../../../assets/images/profil.jpg')}
+              source={require('../../../assets/images/aguia_02.png')}
             />
             <TextInput
-              placeholder="ezgiceylan olarak yorum yap.."
+              placeholder="Comentários.."
               placeholderTextColor={'#969696'}
               style={styles.input}
               value={commentText}
@@ -110,9 +110,9 @@ const Comment = ({navigation, route}) => {
 
           <View>
             {!commentText.length ? (
-              <Text style={{color: '#254253', marginRight: 15}}>Paylaş</Text>
+              <Text style={{color: '#254253', marginRight: 15}}>Enviar</Text>
             ) : (
-              <Text style={{color: '#0096fd', marginRight: 15}}>Paylaş</Text>
+              <Text style={{color: '#0096fd', marginRight: 15}}>Enviar</Text>
             )}
           </View>
         </View>

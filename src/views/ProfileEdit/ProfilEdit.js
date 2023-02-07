@@ -13,13 +13,13 @@ import ImagePicker from 'react-native-image-crop-picker';
 import AntDesign from 'react-native-vector-icons/AntDesign';
 import {useNavigation} from '@react-navigation/native';
 
-import DefaultImage from '../../../assets/images/profil.jpg';
+import DefaultImage from '../../../assets/images/aguia_02.png';
 
 import styles from './ProfilEdit.style';
 
 const ProfilEdit = () => {
-  const [name, setName] = useState('CEYLAN');
-  const [bio, setBio] = useState('Marmara Üniversitesi');
+  const [name, setName] = useState('Anderson Águia');
+  const [bio, setBio] = useState('Atleta');
   const [image, setImage] = useState();
   const navigation = useNavigation();
   const bottomSheet = useRef();
@@ -48,7 +48,7 @@ const ProfilEdit = () => {
                 style={styles.icon}
               />
             </TouchableOpacity>
-            <Text style={styles.label}>Profili Düzenle</Text>
+            <Text style={styles.label}>Editar Perfil</Text>
           </View>
 
           <View style={styles.right}>
@@ -80,7 +80,7 @@ const ProfilEdit = () => {
           />
 
           <TouchableOpacity onPress={() => bottomSheet.current.show()}>
-            <Text style={styles.change}> Profil fotoğrafını değiştir</Text>
+            <Text style={styles.change}> Alterar foto do perfil</Text>
           </TouchableOpacity>
 
           <BottomSheet
@@ -107,10 +107,10 @@ const ProfilEdit = () => {
                 onPress={() => {
                   Linking.openURL('https://www.facebook.com/login/');
                 }}>
-                <Text style={styles.sheetText}>Facebook'tan aktar</Text>
+                <Text style={styles.sheetText}>Abrindo Facebook</Text>
               </TouchableOpacity>
               <View style={{marginVertical: 15}}>
-                <Text style={styles.sheetText}>Avatar kullan</Text>
+                <Text style={styles.sheetText}>Usar Avatar</Text>
               </View>
               <View style={{marginVertical: 15}}>
                 <Text
@@ -123,15 +123,15 @@ const ProfilEdit = () => {
         </View>
 
         <View style={styles.inputContainer}>
-          <Text style={styles.inputLabel}>Ad</Text>
+          <Text style={styles.inputLabel}>Nome</Text>
           <TextInput style={styles.input} onChangeText={item => setName(item)}>
             {name}
           </TextInput>
           <View style={styles.line} />
-          <Text style={styles.inputLabel}>Kullanıcı adı</Text>
-          <Text style={styles.input}>ezgiceylan</Text>
+          <Text style={styles.inputLabel}>Nome de usuário</Text>
+          <Text style={styles.input}>aaguia</Text>
           <View style={styles.line} />
-          <Text style={styles.inputLabel}>Biyografi</Text>
+          <Text style={styles.inputLabel}>Biografia</Text>
           <TextInput style={styles.input} onChangeText={item => setBio(item)}>
             {bio}
           </TextInput>
@@ -153,12 +153,12 @@ const ProfilEdit = () => {
         <View style={styles.blueContainer}>
           <TouchableOpacity
             onPress={() => navigation.navigate('OnboardingScreen')}>
-            <Text style={styles.blueText}>Profesyonel Hesaba Geçiş Yap</Text>
+            <Text style={styles.blueText}>Alternar para conta profissional</Text>
           </TouchableOpacity>
 
-          <Text style={styles.blueText}>Avatarı Düzenle</Text>
+          <Text style={styles.blueText}>Editar Foto</Text>
 
-          <Text style={styles.blueText}>Kişisel bilgi ayarları</Text>
+          <Text style={styles.blueText}>Configurações de informações pessoais</Text>
         </View>
       </View>
     </SafeAreaView>

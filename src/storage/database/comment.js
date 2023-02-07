@@ -1,9 +1,9 @@
 const comment = [
   {
     id: 1,
-    image: require('../images/store2.jpg'),
-    comment: 'Gerçekten mükemmel',
-    user: 'ezgiceylan',
+    image: require('../images/bbarros_01.png'),
+    comment: 'Monstros',
+    user: 'brunobarros19',
   },
   {
     id: 2,

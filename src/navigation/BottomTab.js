@@ -47,7 +47,7 @@ const BottomTab = () => {
             return (
               <Avatar.Image
                 size={28}
-                source={require('../../assets/images/profil.jpg')}
+                source={require('../../assets/images/aguia_02.png')}
               />
             );
           }
@@ -58,8 +58,10 @@ const BottomTab = () => {
       })}>
       <Tab.Screen name="HomeScreen" component={HomeScreen} />
       <Tab.Screen name="Search" component={Search} />
+      {/*
       <Tab.Screen name="Discover" component={Discover} />
       <Tab.Screen name="StoreScreen" component={StoreScreen} />
+      */}
       <Tab.Screen name="AccountScreen" component={AccountScreen} />
     </Tab.Navigator>
   );

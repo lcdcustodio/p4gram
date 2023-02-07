@@ -2,7 +2,7 @@ const data = [
   {
     id: 1,
     name: 'Anderson',
-    postName: 'andersonaguia',
+    postName: 'aaguia',
     image: require('../images/aguia_02.png'),
     postImage: require('../images/aguia_01.png'),
     like: 25,

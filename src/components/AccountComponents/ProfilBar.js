@@ -23,7 +23,7 @@ const ProfilBar = () => {
     <SafeAreaView style={styles.body}>
       <View style={styles.left}>
         <Feather name="lock" size={18} color="white" />
-        <Text style={styles.header}>ezgiceylan</Text>
+        <Text style={styles.header}>aaguia</Text>
         <Image
           source={require('../../../assets/images/down.png')}
           style={{width: 18, height: 18}}
@@ -46,7 +46,7 @@ const ProfilBar = () => {
           sheetBackgroundColor="#262626">
           <View style={{alignItems: 'center', marginTop: 15}}>
             <Text style={{color: 'white', fontSize: 18, fontWeight: 'bold'}}>
-              Oluştur
+              Criar
             </Text>
           </View>
           <View style={styles.line} />
@@ -54,12 +54,12 @@ const ProfilBar = () => {
           <View style={{marginLeft: 15, marginTop: 15}}>
             <View style={styles.sheet2}>
               <Image source={require('../../../assets/images/video.png')} />
-              <Text style={styles.label}>Reels Videosu</Text>
+              <Text style={styles.label}>Reels</Text>
             </View>
 
             <View style={styles.sheet2}>
               <Image source={require('../../../assets/images/grid.png')} />
-              <Text style={styles.label}>Gönderi</Text>
+              <Text style={styles.label}>Publicação</Text>
             </View>
 
             <View style={styles.sheet2}>
@@ -67,14 +67,14 @@ const ProfilBar = () => {
                 source={require('../../../assets/images/stories.png')}
                 style={styles.icon}
               />
-              <Text style={styles.label}>Hikaye</Text>
+              <Text style={styles.label}>Story</Text>
             </View>
             <View style={styles.sheet2}>
               <Image
                 source={require('../../../assets/images/highlight-story.png')}
                 style={styles.icon}
               />
-              <Text style={styles.label}> Öne Çıkan Hikaye</Text>
+              <Text style={styles.label}>Destaque dos stories</Text>
             </View>
 
             <View style={styles.sheet2}>
@@ -82,7 +82,7 @@ const ProfilBar = () => {
                 source={require('../../../assets/images/live.png')}
                 style={styles.icon}
               />
-              <Text style={styles.label}> Canlı</Text>
+              <Text style={styles.label}>Transmissão ao vivo</Text>
             </View>
 
             <View style={styles.sheet2}>
@@ -90,7 +90,7 @@ const ProfilBar = () => {
                 source={require('../../../assets/images/book.png')}
                 style={styles.icon}
               />
-              <Text style={styles.label}> Rehber</Text>
+              <Text style={styles.label}>Guia</Text>
             </View>
           </View>
         </BottomSheet>
@@ -108,7 +108,7 @@ const ProfilBar = () => {
                 bottomSheet.current.close();
               }}>
               <Ionicons name="settings-sharp" size={28} color="white" />
-              <Text style={styles.label}>Ayarlar</Text>
+              <Text style={styles.label}>Configurações</Text>
             </TouchableOpacity>
 
             <View style={styles.sheet}>
@@ -116,7 +116,7 @@ const ProfilBar = () => {
                 source={require('../../../assets/images/timer.png')}
                 style={styles.icon}
               />
-              <Text style={styles.label}>Hareketlerin</Text>
+              <Text style={styles.label}>Sua atividade</Text>
             </View>
 
             <View style={styles.sheet}>
@@ -124,7 +124,7 @@ const ProfilBar = () => {
                 source={require('../../../assets/images/time.png')}
                 style={styles.icon}
               />
-              <Text style={styles.label}>Arşiv</Text>
+              <Text style={styles.label}>Itens Arquivados</Text>
             </View>
 
             <View style={styles.sheet}>
@@ -132,17 +132,17 @@ const ProfilBar = () => {
                 source={require('../../../assets/images/qr-code.png')}
                 style={styles.icon}
               />
-              <Text style={styles.label}>QR Kodu</Text>
+              <Text style={styles.label}>QR code</Text>
             </View>
 
             <View style={styles.sheet}>
               <Feather name="bookmark" size={28} color="white" />
-              <Text style={styles.label}>Kaydedilenler</Text>
+              <Text style={styles.label}>Salvos</Text>
             </View>
 
             <View style={styles.sheet}>
               <AntDesign name="bars" size={28} color="white" />
-              <Text style={styles.label}>Yakın Arkadaşlar</Text>
+              <Text style={styles.label}>Amigos Próximos</Text>
             </View>
 
             <View style={styles.sheet}>
@@ -150,7 +150,7 @@ const ProfilBar = () => {
                 source={require('../../../assets/images/heart.png')}
                 style={styles.icon}
               />
-              <Text style={styles.label}>COVID-19 Bilgi Merkezi</Text>
+              <Text style={styles.label}>Informações COVID-19</Text>
             </View>
           </View>
         </BottomSheet>

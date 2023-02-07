@@ -1,6 +1,6 @@
 import React from 'react';
 import {Image, StyleSheet, Text, View} from 'react-native';
-const defaultImage = require('../../../assets/images/profil.jpg');
+const defaultImage = require('../../../assets/images/aguia_02.png');
 const ProfileHeader = ({route}) => {
   return (
     <View style={styles.container3}>
@@ -13,18 +13,18 @@ const ProfileHeader = ({route}) => {
 
       <View style={styles.numbers}>
         <View style={styles.left}>
-          <Text style={styles.numberContainer}>2</Text>
-          <Text style={styles.text}>Gönderi</Text>
+          <Text style={styles.numberContainer}>3.854</Text>
+          <Text style={styles.text}>Publicações</Text>
         </View>
 
         <View style={styles.mid}>
-          <Text style={styles.numberContainer}>404</Text>
-          <Text style={styles.text}>Takipçi</Text>
+          <Text style={styles.numberContainer}>255 mil</Text>
+          <Text style={styles.text}>Seguidores</Text>
         </View>
 
         <View style={styles.right}>
-          <Text style={styles.numberContainer}>387</Text>
-          <Text style={styles.text}>Takip</Text>
+          <Text style={styles.numberContainer}>2.483</Text>
+          <Text style={styles.text}>Seguindo</Text>
         </View>
       </View>
     </View>

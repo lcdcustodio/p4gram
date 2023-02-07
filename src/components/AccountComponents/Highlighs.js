@@ -13,20 +13,20 @@ const Highlighs = () => {
           navigation.navigate({
             name: 'Story',
             params: {
-              image: require('../../storage/images/avatar.jpg'),
-              name: 'Öne Çıkanlar',
-              pp: require('../../storage/images/profil.jpg'),
+              image: require('../../storage/images/aguia_01.png'),
+              name: 'Destaques',
+              pp: require('../../storage/images/aguia_02.png'),
               timeStory: '50h',
             },
           });
         }}>
         <Image
-          source={require('../../storage/images/avatar.jpg')}
+          source={require('../../storage/images/aguia_01.png')}
           style={styles.image}
         />
       </TouchableOpacity>
 
-      <Text style={styles.label}>Öne Çıkanlar</Text>
+      <Text style={styles.label}>Destaques</Text>
     </View>
   );
 };

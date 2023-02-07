@@ -110,7 +110,7 @@ const Post = () => {
                 <View>
                   <View>
                     <TextInput
-                      placeholder="Ara"
+                      placeholder="Pesquisar"
                       placeholderTextColor={'#a7a7a7'}
                       style={styles.input}
                     />
@@ -135,10 +135,10 @@ const Post = () => {
                         style={{flexDirection: 'row', alignItems: 'center'}}>
                         <Image
                           style={styles.sheetImage}
-                          source={require('../../../assets/images/profil.jpg')}
+                          source={require('../../../assets/images/aguia_02.png')}
                         />
                         <Text style={styles.sheetLabel}>
-                          Hikayene gönderi ekle
+                          Adicionar postagem à sua história
                         </Text>
                       </View>
                       <View style={{justifyContent: 'center'}}>

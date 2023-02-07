@@ -37,7 +37,7 @@ const Settings = () => {
         <TouchableWithoutFeedback onPress={() => navigation.goBack()}>
           <Ionicons name="chevron-back" size={32} color="white" />
         </TouchableWithoutFeedback>
-        <Text style={styles.headerText}>Ayarlar</Text>
+        <Text style={styles.headerText}>Configurações</Text>
       </View>
       <SearchBar />
       <ScrollView>
@@ -60,7 +60,7 @@ const Settings = () => {
             marginBottom: 15,
             fontWeight: '500',
           }}>
-          Hesaplar Merkezi
+          Central de contas
         </Text>
 
         <Text style={styles.p}>
