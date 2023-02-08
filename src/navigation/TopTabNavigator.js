@@ -16,12 +16,14 @@ const TopTabNavigator = () => {
           if (route.name === 'ProfilPost') {
             return <Image source={require('../../assets/images/grid.png')} />;
           }
+          {/* 
           if (route.name === 'ProfilReels') {
             return <Image source={require('../../assets/images/video.png')} />;
           }
           if (route.name === 'Tag') {
             return <Image source={require('../../assets/images/avatar.png')} />;
           }
+          */}
         },
         tabBarIndicatorStyle: {backgroundColor: 'white', height: 2},
         tabBarLabel: '',
@@ -30,8 +32,10 @@ const TopTabNavigator = () => {
         },
       })}>
       <Tab.Screen name="ProfilPost" component={ProfilPost} />
+      {/* 
       <Tab.Screen name="ProfilReels" component={Reels} />
       <Tab.Screen name="Tag" component={Tag} />
+      */}
     </Tab.Navigator>
   );
 };

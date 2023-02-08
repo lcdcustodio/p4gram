@@ -36,13 +36,14 @@ const TopBar = () => {
         <TouchableOpacity onPress={() => navigation.navigate('Notification')}>
           <Feather name="heart" size={24} color="white" />
         </TouchableOpacity>
-
+        {/*
         <TouchableOpacity onPress={() => navigation.navigate('MessageScreen')}>
           <Image
             source={require('../../../assets/images/messenger.png')}
             style={{height: 24, width: 24}}
           />
         </TouchableOpacity>
+        */}
       </View>
     </View>
   );

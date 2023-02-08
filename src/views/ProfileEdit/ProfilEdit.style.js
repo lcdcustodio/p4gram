@@ -39,7 +39,7 @@ export default StyleSheet.create({
   },
   inputContainer: {
     justifyContent: 'space-around',
-    height: '30%',
+    height: '40%',
     marginLeft: 10,
   },
   inputLabel: {

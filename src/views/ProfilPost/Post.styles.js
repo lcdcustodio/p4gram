@@ -56,6 +56,7 @@ export default StyleSheet.create({
   ıconContainer: {
     flexDirection: 'row',
     justifyContent: 'space-between',
+    width: '45%',
     marginTop: 15,
   },
 

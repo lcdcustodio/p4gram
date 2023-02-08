@@ -28,7 +28,7 @@ export default StyleSheet.create({
     marginLeft: 15,
     marginRight: 10,
     alignItems: 'center',
-    width: '82%',
+    width: '72%',
   },
   editText: {
     color: '#D8D8D8',

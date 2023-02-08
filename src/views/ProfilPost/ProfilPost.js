@@ -8,7 +8,7 @@ const ProfilPost = ({navigation}) => {
     <Container>
       <TouchableOpacity onPress={() => navigation.navigate('SinglePost')}>
         <Image
-          source={require('../../storage/images/post.jpg')}
+          source={require('../../storage/images/aguia_01.png')}
           style={{
             width: '33%',
             height: 135,

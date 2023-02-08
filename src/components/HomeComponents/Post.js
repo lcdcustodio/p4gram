@@ -64,10 +64,11 @@ const Post = () => {
                 <Image source={data.image} style={styles.profilImage} />
                 <Text style={styles.title}>{data.postName}</Text>
               </View>
-
+              {/*
               <TouchableOpacity style={{alignSelf: 'center', marginRight: 15}}>
                 <Feather name="more-vertical" size={20} color="#F5F5F5" />
               </TouchableOpacity>
+               */}
             </View>
 
             <View style={{height: 400}}>
@@ -96,11 +97,14 @@ const Post = () => {
                       },
                     })
                   }>
-                  <Feather name="message-circle" size={24} color="white" />
+                     
+                  <Feather name="message-circle" size={24} color="white" />                  
                 </TouchableOpacity>
+                {/*
                 <TouchableOpacity onPress={() => bottomSheet.current.show()}>
                   <Feather name="send" size={24} color="white" />
                 </TouchableOpacity>
+                */}
               </View>
               <BottomSheet
                 hasDraggableIcon
@@ -138,7 +142,7 @@ const Post = () => {
                           source={require('../../../assets/images/aguia_02.png')}
                         />
                         <Text style={styles.sheetLabel}>
-                          Adicionar postagem à sua história
+                          Adicionar postagem a sua história
                         </Text>
                       </View>
                       <View style={{justifyContent: 'center'}}>
@@ -164,9 +168,11 @@ const Post = () => {
                   </View>
                 </View>
               </BottomSheet>
+              {/* 
               <View style={{marginRight: 20}}>
                 <FontAwesome name="bookmark-o" size={24} color="white" />
               </View>
+              */}
             </View>
 
             <Text style={styles.likeText}>
@@ -183,7 +189,7 @@ const Post = () => {
             </View>
 
             <Text style={styles.comment}>{data.comment}</Text>
-
+            {/* 
             <View
               style={{
                 flexDirection: 'row',
@@ -196,6 +202,7 @@ const Post = () => {
               />
               <Text style={{opacity: 0.8, color: 'grey'}}>Adicionar comentário...</Text>
             </View>
+            */}
 
             <Text style={styles.time}>{data.time}</Text>
           </View>

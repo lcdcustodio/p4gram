@@ -7,7 +7,7 @@ const setting = [
   {
     id: 2,
     icon: require('../images/bell.png'),
-    name: 'Bildirimler',
+    name: 'Notificações',
   },
   {
     id: 3,

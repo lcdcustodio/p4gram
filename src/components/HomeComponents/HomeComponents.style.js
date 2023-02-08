@@ -42,7 +42,8 @@ export default StyleSheet.create({
   ıconContainer: {
     flexDirection: 'row',
     justifyContent: 'space-between',
-    marginTop: 15,
+    width: '45%',
+    marginTop: 5,
   },
 
   likeText: {
@@ -131,7 +132,7 @@ export default StyleSheet.create({
     flexDirection: 'row',
     justifyContent: 'space-around',
     alignItems: 'center',
-    width: '34%',
+    width: '17%',
     marginRight: 10,
   },
   logoContainer: {

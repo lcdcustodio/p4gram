@@ -27,12 +27,13 @@ const Comment = ({navigation, route}) => {
               <TouchableOpacity onPress={() => navigation.goBack()}>
                 <Ionicons name="chevron-back" size={28} color="white" />
               </TouchableOpacity>
-              <Text style={styles.label}> Yorumlar</Text>
+              <Text style={styles.label}> Comentários</Text>
             </View>
-
+            {/* 
             <View style={{justifyContent: 'center', marginRight: 20}}>
               <Feather name="send" size={24} color="white" />
             </View>
+            */}
           </View>
 
           <ScrollView>

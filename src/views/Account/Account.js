@@ -13,7 +13,9 @@ const Account = ({route}) => {
       <ProfilBar />
       <ProfileHeader route={route.params} />
       <Bio route={route.params} />
+      {/* 
       <Highlighs />
+      */}
       <TopTabNavigator />
     </Container>
   );

@@ -1,6 +1,7 @@
 import React from 'react';
 import {Image, SafeAreaView, Text, TouchableOpacity, View} from 'react-native';
 import {useNavigation} from '@react-navigation/native';
+import Ionicons from 'react-native-vector-icons/Ionicons';
 
 import styles from './AccountComponents.style';
 
@@ -20,7 +21,7 @@ const Bio = ({route}) => {
         style={{
           marginTop: 10,
           flexDirection: 'row',
-          justifyContent: 'space-around',
+          justifyContent: 'center',
         }}>
         <TouchableOpacity
           style={styles.edit}
@@ -29,14 +30,21 @@ const Bio = ({route}) => {
             <Text style={styles.editText}>Editar Perfil</Text>
           </View>
         </TouchableOpacity>
-
-        <View style={styles.icon}>
-          <Image
-            source={require('../../../assets/images/invite.png')}
-            style={{width: 16, height: 16}}
-          />
-        </View>
+         
+        <TouchableOpacity 
+          style={styles.icon}            
+          onPress={() => navigation.navigate('MessageScreen')}>  
+          <Ionicons name="people-outline" size={24} color="white" />
+        </TouchableOpacity>
+        
+        <TouchableOpacity 
+          style={styles.icon}            
+          onPress={() => navigation.navigate('MessageScreen')}>  
+          <Ionicons name="trophy-outline" size={24} color="white" />
+        </TouchableOpacity>
+        
       </View>
+
     </SafeAreaView>
   );
 };

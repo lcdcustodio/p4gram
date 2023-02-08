@@ -7,21 +7,21 @@ const comment = [
   },
   {
     id: 2,
-    image: require('../images/profil3.jpg'),
-    comment: 'Heyecanlı',
-    user: 'burakczn',
+    image: require('../images/mlk_01.png'),
+    comment: 'Vamooo..',
+    user: 'molequezagueiro',
   },
   {
     id: 3,
-    image: require('../images/profil4.jpg'),
-    comment: ':))))',
-    user: 'sude',
+    image: require('../images/brisa_01.png'),
+    comment: 'Feras..',
+    user: 'brisaftv',
   },
   {
     id: 4,
-    comment: 'Vay canına..',
-    image: require('../images/profil6.jpg'),
-    user: 'alii',
+    comment: 'Essa foto é pesada..',
+    image: require('../images/rpai_01.png'),
+    user: 'ct_rpai',
   },
 ];
 export default comment;

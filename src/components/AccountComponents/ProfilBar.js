@@ -1,6 +1,7 @@
 import React, {useRef} from 'react';
 import {
   Image,
+  Alert,
   SafeAreaView,
   StyleSheet,
   Text,
@@ -22,21 +23,25 @@ const ProfilBar = () => {
   return (
     <SafeAreaView style={styles.body}>
       <View style={styles.left}>
+        {/*        
         <Feather name="lock" size={18} color="white" />
-        <Text style={styles.header}>aaguia</Text>
+        */}
+        <Text style={styles.header}>andersonaguia</Text>
+        {/*
         <Image
           source={require('../../../assets/images/down.png')}
           style={{width: 18, height: 18}}
         />
+        */}
       </View>
 
       <View style={styles.right}>
         <TouchableOpacity onPress={() => bottomSheet2.current.show()}>
           <FontAwesome
             name="plus-square-o"
-            size={28}
+            size={24}
             color="white"
-            style={{marginRight: 10}}
+            style={{marginLeft: 30}}
           />
         </TouchableOpacity>
         <BottomSheet
@@ -53,38 +58,74 @@ const ProfilBar = () => {
 
           <View style={{marginLeft: 15, marginTop: 15}}>
             <View style={styles.sheet2}>
-              <Image source={require('../../../assets/images/video.png')} />
-              <Text style={styles.label}>Reels</Text>
+              
+              <Ionicons name="people" size={28} color="white" />              
+              <Text style={styles.label}>Grupo</Text>
             </View>
 
             <View style={styles.sheet2}>
-              <Image source={require('../../../assets/images/grid.png')} />
-              <Text style={styles.label}>Publicação</Text>
+              <Ionicons name="game-controller" size={28} color="white" />
+              <Text style={styles.label}>Partida</Text>
             </View>
-
+            {/*  
             <View style={styles.sheet2}>
               <Image
                 source={require('../../../assets/images/stories.png')}
                 style={styles.icon}
               />
-              <Text style={styles.label}>Story</Text>
+              <Text style={styles.label}>Desafio</Text>
             </View>
+            
+            */}
+            <TouchableOpacity
+              style={styles.sheet2}
+              onPress={() => {                
+                Alert.alert('TBD after MVP. Add recommendations AI/ML based');
+              }}>
+              
+              <Ionicons name="flame" size={28} color="white" />
+              <Text style={styles.label}>Desafio</Text>
+            </TouchableOpacity>
+
+            <TouchableOpacity
+              style={styles.sheet2}
+              onPress={() => {                
+                Alert.alert('TBD after MVP');
+              }}>
+              
+              <Ionicons name="fitness" size={28} color="white" />
+              <Text style={styles.label}>Treino</Text>
+            </TouchableOpacity>
+
+            <TouchableOpacity
+              style={styles.sheet2}
+              onPress={() => {                
+                Alert.alert('TBD after MVP');
+              }}>
+              
+              <Ionicons name="trophy" size={28} color="white" />
+              <Text style={styles.label}>Torneio</Text>
+            </TouchableOpacity>
+
+
+            {/* 
             <View style={styles.sheet2}>
               <Image
                 source={require('../../../assets/images/highlight-story.png')}
                 style={styles.icon}
               />
-              <Text style={styles.label}>Destaque dos stories</Text>
+              <Text style={styles.label}>Treino</Text>
             </View>
-
+            
             <View style={styles.sheet2}>
               <Image
                 source={require('../../../assets/images/live.png')}
                 style={styles.icon}
               />
-              <Text style={styles.label}>Transmissão ao vivo</Text>
+              <Text style={styles.label}>Torneio</Text>
             </View>
-
+            */}
+            {/*
             <View style={styles.sheet2}>
               <Image
                 source={require('../../../assets/images/book.png')}
@@ -92,6 +133,7 @@ const ProfilBar = () => {
               />
               <Text style={styles.label}>Guia</Text>
             </View>
+            */}
           </View>
         </BottomSheet>
 
@@ -110,15 +152,13 @@ const ProfilBar = () => {
               <Ionicons name="settings-sharp" size={28} color="white" />
               <Text style={styles.label}>Configurações</Text>
             </TouchableOpacity>
-
+            {/*   
             <View style={styles.sheet}>
-              <Image
-                source={require('../../../assets/images/timer.png')}
-                style={styles.icon}
-              />
-              <Text style={styles.label}>Sua atividade</Text>
-            </View>
 
+              <Ionicons name="trophy" size={28} color="white" />
+              <Text style={styles.label}>Ranking</Text>
+            </View>
+            
             <View style={styles.sheet}>
               <Image
                 source={require('../../../assets/images/time.png')}
@@ -152,12 +192,18 @@ const ProfilBar = () => {
               />
               <Text style={styles.label}>Informações COVID-19</Text>
             </View>
+            */}
           </View>
         </BottomSheet>
-
+        {/*   
+        <TouchableOpacity onPress={() => navigation.navigate('MessageScreen')}>
+          <Ionicons name="trophy" size={24} color="white" />
+        </TouchableOpacity>        
+        */}
         <TouchableOpacity onPress={() => bottomSheet.current.show()}>
-          <FontAwesome name="bars" size={28} color="white" />
+          <FontAwesome name="bars" size={24} color="white" />
         </TouchableOpacity>
+
       </View>
     </SafeAreaView>
   );

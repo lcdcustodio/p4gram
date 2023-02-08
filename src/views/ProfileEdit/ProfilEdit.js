@@ -19,6 +19,7 @@ import styles from './ProfilEdit.style';
 
 const ProfilEdit = () => {
   const [name, setName] = useState('Anderson Águia');
+  const [postname, setPostname] = useState('andersonaguia');  
   const [bio, setBio] = useState('Atleta');
   const [image, setImage] = useState();
   const navigation = useNavigation();
@@ -91,7 +92,7 @@ const ProfilEdit = () => {
             <View style={{marginLeft: 10}}>
               <View style={{marginTop: 25, marginBottom: 15}}>
                 <Text style={styles.sheetText}>
-                  Profil fotoğrafını değiştir
+                  Alterar foto do perfil
                 </Text>
               </View>
 
@@ -100,7 +101,7 @@ const ProfilEdit = () => {
               <TouchableOpacity
                 style={{marginVertical: 20}}
                 onPress={chooseFromLibrary}>
-                <Text style={styles.sheetText}>Yeni Profil Fotoğrafı</Text>
+                <Text style={styles.sheetText}>Nova foto de perfil</Text>
               </TouchableOpacity>
               <TouchableOpacity
                 style={{marginVertical: 15}}
@@ -109,13 +110,15 @@ const ProfilEdit = () => {
                 }}>
                 <Text style={styles.sheetText}>Abrindo Facebook</Text>
               </TouchableOpacity>
+              {/* 
               <View style={{marginVertical: 15}}>
                 <Text style={styles.sheetText}>Usar Avatar</Text>
               </View>
+              */}
               <View style={{marginVertical: 15}}>
                 <Text
                   style={{color: '#be363f', fontWeight: '500', fontSize: 18}}>
-                  Profil fotoğrafını kaldır
+                  Remover foto do perfil
                 </Text>
               </View>
             </View>
@@ -123,13 +126,20 @@ const ProfilEdit = () => {
         </View>
 
         <View style={styles.inputContainer}>
+          
+
           <Text style={styles.inputLabel}>Nome</Text>
           <TextInput style={styles.input} onChangeText={item => setName(item)}>
             {name}
           </TextInput>
+           
           <View style={styles.line} />
+          
           <Text style={styles.inputLabel}>Nome de usuário</Text>
-          <Text style={styles.input}>aaguia</Text>
+          
+          <TextInput style={styles.input} onChangeText={item => setPostname(item)}>
+            {postname}
+          </TextInput>
           <View style={styles.line} />
           <Text style={styles.inputLabel}>Biografia</Text>
           <TextInput style={styles.input} onChangeText={item => setBio(item)}>
@@ -137,6 +147,7 @@ const ProfilEdit = () => {
           </TextInput>
           <View style={styles.line} />
         </View>
+        {/* 
         <View style={styles.lineGrey}>
           <Text
             style={{
@@ -149,7 +160,8 @@ const ProfilEdit = () => {
             Bağlantı ekle
           </Text>
         </View>
-
+        */}
+        {/* 
         <View style={styles.blueContainer}>
           <TouchableOpacity
             onPress={() => navigation.navigate('OnboardingScreen')}>
@@ -160,6 +172,7 @@ const ProfilEdit = () => {
 
           <Text style={styles.blueText}>Configurações de informações pessoais</Text>
         </View>
+        */}
       </View>
     </SafeAreaView>
   );

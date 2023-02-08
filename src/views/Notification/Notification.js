@@ -22,7 +22,7 @@ const Header = () => {
       <TouchableWithoutFeedback onPress={() => navigation.goBack()}>
         <Ionicons name="chevron-back" size={32} color="white" />
       </TouchableWithoutFeedback>
-      <Text style={styles.headerText}>Bildirimler</Text>
+      <Text style={styles.headerText}>Notificações</Text>
     </View>
   );
 };
@@ -54,7 +54,7 @@ const Notification = () => {
       <Header />
       <ScrollView>
         <View>
-          <Text style={styles.time}>Bu hafta</Text>
+          <Text style={styles.time}>Mais recentes</Text>
         </View>
         <View>
           {notification.map((data, index) => {
@@ -92,9 +92,9 @@ const Notification = () => {
                       }}
                       onPress={() => handleFlowPress(data.user)}>
                       {checkFollow(follow, data.user) ? (
-                        <Text style={styles.butonText}>Takiptesin</Text>
+                        <Text style={styles.butonText}>Seguindo</Text>
                       ) : (
-                        <Text style={styles.butonText}>Takip Et</Text>
+                        <Text style={styles.butonText}>Seguir</Text>
                       )}
                     </TouchableOpacity>
                   </View>
@@ -102,9 +102,12 @@ const Notification = () => {
               </View>
             );
           })}
+          {/* 
           <View style={styles.line} />
           <Text style={styles.time}>Bu ay</Text>
+          */}
         </View>
+        {/* 
         <View style={styles.container}>
           <View
             style={{
@@ -129,6 +132,8 @@ const Notification = () => {
             />
           </View>
         </View>
+        */}
+
       </ScrollView>
     </Container>
   );
