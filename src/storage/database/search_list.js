@@ -1,33 +1,20 @@
-const data = [
+const message = [
   {
     id: 1,
-    name: 'Anderson',
-    postName: 'andersonaguia',
-    image: require('../images/aguia_02.png'),
-    postImage: require('../images/aguia_01.png'),
-    like: 25,
-    comment: 'ver todos os 4 comentários',
-    explanation: 'Saudades dessa dupla em quadra...',
-    time: 'Há 1 hora',
-    timeStory: '1s',
-    islike: false,
-  },
-  {
-    id: 2,
     name: 'Maicon Souza',
     postName: 'maicon08_oficial',
     image: require('../images/maicon_01.png'),
     postImage: require('../images/maicon_02.png'),
     like: 160,
     comment: 'ver todos os 4 comentários',
-    explanation: 'Obrigado @andersonaguia pelo convite!',
+    explanation: 'Obrigado @andersonaguia e @romariofaria pelo convite, estrutura top do @tafc_futevolei , muito feliz em ter participado desse grande evento e ainda mais por ter chego na final, e não poderia deixar de agradecer meu parceiro @brunoreislino valeu pelos jogos e parceria Tmj !!',
     time: 'Há 2 horas',
     timeStory: '53d',
     islike: false,
   },
 
   {
-    id: 3,
+    id: 2,
     name: 'Fabio',
     postName: 'molequezagueiro',
     image: require('../images/mlk_01.png'),
@@ -40,7 +27,7 @@ const data = [
     islike: false,
   },
   {
-    id: 4,
+    id: 3,
     name: 'Fabricio Brisa',
     postName: 'brisaftv',
     image: require('../images/brisa_01.png'),
@@ -53,7 +40,7 @@ const data = [
     islike: false,
   },
   {
-    id: 5,
+    id: 4,
     name: 'CT RPai',
     postName: 'ct_rpai',
     image: require('../images/rpai_01.png'),
@@ -66,7 +53,7 @@ const data = [
     islike: false,
   },
   {
-    id: 6,
+    id: 5,
     name: 'Bruno Barros',
     postName: 'brunobarros19',
     image: require('../images/bbarros_01.png'),
@@ -79,7 +66,7 @@ const data = [
     islike: false,
   },
   {
-    id: 7,
+    id: 6,
     name: 'Bruno Vasconcelos',
     postName: 'bruninhofutevolei',
     image: require('../images/bftv_01.png'),
@@ -92,4 +79,4 @@ const data = [
     islike: false,
   },
 ];
-export default data;
+export default message;

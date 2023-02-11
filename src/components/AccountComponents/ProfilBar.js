@@ -77,6 +77,8 @@ const ProfilBar = () => {
             </View>
             
             */}
+            <View style={styles.line} />
+
             <TouchableOpacity
               style={styles.sheet2}
               onPress={() => {                

@@ -1,36 +1,71 @@
 import React from 'react';
-import {FlatList, Image, SafeAreaView, TouchableOpacity} from 'react-native';
-import {useScrollToTop} from '@react-navigation/native';
+import {
+  Image,
+  ScrollView,
+  Text,
+  TouchableOpacity,
+  TouchableWithoutFeedback,
+  View,
+} from 'react-native';
+import Feather from 'react-native-vector-icons/Feather';
+import Ionicons from 'react-native-vector-icons/Ionicons';
 
+import Container from '../../components/Container/Container';
 import SearchBar from '../../components/SearchBar/SearchBar';
-import data from '../../storage/database/search';
+import message from '../../storage/database/search_list';
 
-const Search = () => {
-  const flatListRef = React.useRef(null);
-  useScrollToTop(flatListRef);
+import AccountScreen from '../../navigation/AccountScreen';
+import Account from '../Account/Account';
+import Search_details from './Search_details';
 
-  const renderItem = ({item, index}) => (
-    <TouchableOpacity key={index} style={{width: '33%', margin: 0.8}}>
-      <Image
-        source={item.image}
-        style={{width: '100%', height: 130, borderWidth: 1}}
-      />
-    </TouchableOpacity>
-  );
 
+
+import styles from '../Message/styles';
+
+const Search = ({navigation}) => {
   return (
-    <SafeAreaView style={{backgroundColor: 'black', flex: 1}}>
-      <SearchBar ıconColor={true} />
-      <FlatList
-        ref={flatListRef}
-        horizontal={false}
-        data={data}
-        keyExtractor={(_item, index) => index.toString()}
-        renderItem={renderItem}
-        numColumns={3}
-        showsVerticalScrollIndicator={false}
-      />
-    </SafeAreaView>
+    <Container insets={{bottom: true, top: true}}>
+
+      <ScrollView>
+        <View style={{marginTop: 10}}>
+          <SearchBar />
+        </View>
+
+
+        <View>
+          {message.map((data, index) => {
+
+            console.log('Search');
+            console.log(data);
+
+            return (
+              <TouchableOpacity
+                key={index}
+                activeOpacity={0.6}
+                onPress={() => {
+                  navigation.navigate({
+                    name: 'Search_details',                    
+                    params: {
+                      image: data.image,                      
+                      name: data.name,
+                      username: data.postName,                      
+                    },                    
+                  });
+                }}>
+                <View style={styles.messageContainer}>
+                  <Image style={styles.image} source={data.image} />
+                  <View style={{marginLeft: 10}}>
+                    <Text style={styles.user}>{data.name}</Text>                    
+                    <Text style={styles.message}>{data.postName}</Text>
+                  </View>
+                </View>
+              </TouchableOpacity>
+            );
+          })}
+        </View>
+      </ScrollView>
+    </Container>
   );
 };
+
 export default Search;

@@ -2,15 +2,18 @@ import React from 'react';
 import {Image, StyleSheet, Text, View} from 'react-native';
 const defaultImage = require('../../../assets/images/aguia_02.png');
 const ProfileHeader = ({route}) => {
+
+  console.log('ProfileHeader');
+  console.log(route);
+
   return (
     <View style={styles.container3}>
       <View>
         <Image
-          source={route ? {uri: route.image} : defaultImage}
+          source={route ? route.image : defaultImage}
           style={styles.image3}
         />
       </View>
-
       <View style={styles.numbers}>
         <View style={styles.left}>
           <Text style={styles.numberContainer}>3.854</Text>

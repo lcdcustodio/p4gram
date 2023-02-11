@@ -12,7 +12,7 @@ export default StyleSheet.create({
     color: '#D8D8D8',
     fontSize: 15,
     marginLeft: 12,
-    marginTop: 5,
+    marginTop: 5,    
   },
   bioContainer: {
     marginVertical: 5,

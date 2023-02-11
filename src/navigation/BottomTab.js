@@ -11,6 +11,9 @@ import Search from '../views/Search/Search';
 import AccountScreen from './AccountScreen';
 import HomeScreen from './HomeScreen';
 import StoreScreen from './StoreScreen';
+import MessageScreen from './MessageScreen';
+import SearchScreen from './SearchScreen';
+
 
 const Tab = createBottomTabNavigator();
 
@@ -29,10 +32,11 @@ const BottomTab = () => {
               />
             );
           }
-          if (route.name === 'Search') {
+          if (route.name === 'SearchScreen') {
             return <Feather name="search" size={28} color="white" />;
           }
-          if (route.name === 'Discover') {
+          {/* 
+          if (route.name === 'SearchScreen') {
             return (
               <Image
                 source={require('../../assets/images/video.png')}
@@ -40,6 +44,7 @@ const BottomTab = () => {
               />
             );
           }
+          */}
           if (route.name === 'StoreScreen') {
             return <Feather name="shopping-bag" size={28} color="white" />;
           }
@@ -56,9 +61,10 @@ const BottomTab = () => {
         tabBarShowLabel: false,
         headerShown: false,
       })}>
-      <Tab.Screen name="HomeScreen" component={HomeScreen} />
-      <Tab.Screen name="Search" component={Search} />
+      <Tab.Screen name="HomeScreen" component={HomeScreen} />      
+      <Tab.Screen name="SearchScreen" component={SearchScreen} />
       {/*
+      <Tab.Screen name="Search" component={Search} />
       <Tab.Screen name="Discover" component={Discover} />
       <Tab.Screen name="StoreScreen" component={StoreScreen} />
       */}

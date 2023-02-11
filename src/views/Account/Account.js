@@ -7,15 +7,20 @@ import ProfileHeader from '../../components/AccountComponents/ProfilHeader';
 import Container from '../../components/Container/Container';
 import TopTabNavigator from '../../navigation/TopTabNavigator';
 
-const Account = ({route}) => {
+//const SingleMessage = ({route, navigation}) => {
+const Account = ({route, navigation}) => {
+
+  console.log('Account');
+  console.log(route);
+
   return (
     <Container insets={{top: true, right: true, bottom: true}}>
       <ProfilBar />
       <ProfileHeader route={route.params} />
       <Bio route={route.params} />
-      {/* 
+       
       <Highlighs />
-      */}
+      {/* */}
       <TopTabNavigator />
     </Container>
   );

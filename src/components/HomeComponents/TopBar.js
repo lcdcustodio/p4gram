@@ -43,7 +43,7 @@ const TopBar = () => {
             style={{height: 24, width: 24}}
           />
         </TouchableOpacity>
-        */}
+         */}
       </View>
     </View>
   );

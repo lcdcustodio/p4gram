@@ -7,11 +7,17 @@ import styles from './AccountComponents.style';
 
 const Bio = ({route}) => {
   const navigation = useNavigation();
-
+   
+  console.log('bio');
+  console.log(route);
+  {/* */}
   return (
     <SafeAreaView>
       <View style={styles.bioContainer}>
         <Text style={styles.userName}> {route ? route.name : 'Anderson Águia'}</Text>
+        {/* 
+        <Text style={styles.userName}> {route ? route.name : 'Anderson Águia'}</Text>
+        */}
         <Text style={styles.bio}>
           {route ? route.bio : 'Atleta'}
         </Text>
