@@ -20,6 +20,17 @@ An instagram clone developed with react-native.
    
  </p>
 
+
+## Package versions
+
+```bash
+node v16.19.0
+yarn 1.22.19
+npx 8.19.3
+npm 8.19.3
+```
+
+
 ## Install
 
 ```bash
@@ -27,7 +38,6 @@ git clone https://github.com/lcdcustodio/p4gram.git
 cd p4gram
 yarn install
 ```
-## Usage
 
 ### Android
 ```bash
