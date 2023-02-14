@@ -129,6 +129,8 @@ export default StyleSheet.create({
     borderRadius: 100,
     marginLeft: 5,
   },
+
+
   numbers: {
     flexDirection: 'row',
     justifyContent: 'space-around',

@@ -42,7 +42,7 @@ const Settings = () => {
       <SearchBar />
       <ScrollView>
         <SettingComponent />
-
+        {/* 
         <View style={{flexDirection: 'row', marginTop: 30, marginBottom: 5}}>
           <Image
             source={require('../../storage/images/meta.png')}
@@ -79,6 +79,7 @@ const Settings = () => {
           </TouchableWithoutFeedback>
           <Text style={styles.blueText}>Tüm Hesaplardan Çıkış Yap</Text>
         </View>
+        */}
       </ScrollView>
     </Container>
   );

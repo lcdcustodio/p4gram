@@ -14,12 +14,6 @@ import Container from '../../components/Container/Container';
 import SearchBar from '../../components/SearchBar/SearchBar';
 import message from '../../storage/database/search_list';
 
-import AccountScreen from '../../navigation/AccountScreen';
-import Account from '../Account/Account';
-import Search_details from './Search_details';
-
-
-
 import styles from '../Message/styles';
 
 const Search = ({navigation}) => {
@@ -48,7 +42,8 @@ const Search = ({navigation}) => {
                     params: {
                       image: data.image,                      
                       name: data.name,
-                      username: data.postName,                      
+                      username: data.postName,
+                      bio: data.bio,                      
                     },                    
                   });
                 }}>

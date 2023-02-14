@@ -1,7 +1,7 @@
 const professional = [
   {
     id: 1,
-    image: require('../images/profil.jpg'),
+    image: require('../images/aguia_02.png'),
     title: 'Profesyonel Araçlar Edin',
     description:
       'Profesyonel bir hesapla takipçilerin ve hesap performansın hakkında istatistikler gibi araçlara,yeni iletişim seçeneklerine ve daha fazlasına erişirsin.',

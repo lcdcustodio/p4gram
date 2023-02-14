@@ -1,14 +1,17 @@
 const setting = [
+  /*
   {
     id: 1,
     icon: require('../images/invite.png'),
     name: 'Arkadaşları Takip ve Davet Et',
   },
+  */
   {
     id: 2,
     icon: require('../images/bell.png'),
     name: 'Notificações',
   },
+  /*
   {
     id: 3,
     icon: require('../images/padlock.png'),
@@ -49,5 +52,6 @@ const setting = [
     icon: require('../images/color-palette.png'),
     name: 'Tema',
   },
+  */
 ];
 export default setting;

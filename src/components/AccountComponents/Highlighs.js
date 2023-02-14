@@ -13,15 +13,15 @@ const Highlighs = () => {
           navigation.navigate({
             name: 'Story',
             params: {
-              image: require('../../storage/images/aguia_01.png'),
+              image: require('../../storage/images/maicon_02.png'),
               name: 'Destaques',
-              pp: require('../../storage/images/aguia_02.png'),
+              pp: require('../../storage/images/maicon_01.png'),
               timeStory: '50h',
             },
           });
         }}>
         <Image
-          source={require('../../storage/images/aguia_01.png')}
+          source={require('../../storage/images/maicon_02.png')}
           style={styles.image}
         />
       </TouchableOpacity>

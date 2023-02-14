@@ -1,6 +1,6 @@
 import React from 'react';
 import {Image, StyleSheet, Text, View} from 'react-native';
-const defaultImage = require('../../../assets/images/aguia_02.png');
+const defaultImage = require('../../../assets/images/maicon_01.png');
 const ProfileHeader = ({route}) => {
 
   console.log('ProfileHeader');

@@ -26,7 +26,7 @@ const ProfilBar = () => {
         {/*        
         <Feather name="lock" size={18} color="white" />
         */}
-        <Text style={styles.header}>andersonaguia</Text>
+        <Text style={styles.header}>maicon08_oficial</Text>
         {/*
         <Image
           source={require('../../../assets/images/down.png')}
@@ -57,16 +57,25 @@ const ProfilBar = () => {
           <View style={styles.line} />
 
           <View style={{marginLeft: 15, marginTop: 15}}>
-            <View style={styles.sheet2}>
+            <TouchableOpacity
+                style={styles.sheet2}
+                onPress={() => {                
+                  Alert.alert('Em construção.');
+                }}>
               
               <Ionicons name="people" size={28} color="white" />              
               <Text style={styles.label}>Grupo</Text>
-            </View>
+            </TouchableOpacity>
 
-            <View style={styles.sheet2}>
+            <TouchableOpacity
+                style={styles.sheet2}
+                onPress={() => {                
+                  Alert.alert('Em construção.');
+                }}>
+              
               <Ionicons name="game-controller" size={28} color="white" />
               <Text style={styles.label}>Partida</Text>
-            </View>
+            </TouchableOpacity>
             {/*  
             <View style={styles.sheet2}>
               <Image
@@ -82,7 +91,7 @@ const ProfilBar = () => {
             <TouchableOpacity
               style={styles.sheet2}
               onPress={() => {                
-                Alert.alert('TBD after MVP. Add recommendations AI/ML based');
+                Alert.alert('Em construção. Após MVP. Utilizar algoritmo de recommendação (AI/ML).');
               }}>
               
               <Ionicons name="flame" size={28} color="white" />
@@ -92,7 +101,7 @@ const ProfilBar = () => {
             <TouchableOpacity
               style={styles.sheet2}
               onPress={() => {                
-                Alert.alert('TBD after MVP');
+                Alert.alert('Em construção. Após MVP.');
               }}>
               
               <Ionicons name="fitness" size={28} color="white" />
@@ -102,7 +111,7 @@ const ProfilBar = () => {
             <TouchableOpacity
               style={styles.sheet2}
               onPress={() => {                
-                Alert.alert('TBD after MVP');
+                Alert.alert('Em construção. Após MVP.');
               }}>
               
               <Ionicons name="trophy" size={28} color="white" />

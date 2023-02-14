@@ -52,7 +52,7 @@ const BottomTab = () => {
             return (
               <Avatar.Image
                 size={28}
-                source={require('../../assets/images/aguia_02.png')}
+                source={require('../../assets/images/maicon_01.png')}
               />
             );
           }

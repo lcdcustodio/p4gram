@@ -128,7 +128,7 @@ const Notification = () => {
           <View style={{alignItems: 'center'}}>
             <Image
               style={styles.story}
-              source={require('../../storage/images/profil.jpg')}
+              source={require('../../storage/images/aguia_02.png')}
             />
           </View>
         </View>

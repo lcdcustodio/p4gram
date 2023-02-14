@@ -4,14 +4,14 @@ const message = [
     user: 'Burak Ceylan',
     username: 'burakcey',
     message: 'Bir mesajı beğendi · 8s',
-    image: require('../images/profil2.jpg'),
+    image: require('../images/aguia_02.png'),
   },
   {
     id: '2',
     user: 'Ahmet Ok',
     username: 'ahmetok',
     message: 'Çok komik bir video · 12s',
-    image: require('../images/profil3.jpg'),
+    image: require('../images/aguia_02.png'),
   },
   {
     id: '3',
@@ -39,14 +39,14 @@ const message = [
     user: 'Burak Ceylan',
     username: 'burakceylan',
     message: 'Bir mesajı beğendi · 8s',
-    image: require('../images/profil2.jpg'),
+    image: require('../images/aguia_02.png'),
   },
   {
     id: '7',
     user: 'Ahmet Ok',
     username: 'ahmettok',
     message: 'Çok komik bir video · 12s',
-    image: require('../images/profil3.jpg'),
+    image: require('../images/aguia_02.png'),
   },
   {
     id: '8',

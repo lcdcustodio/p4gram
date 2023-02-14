@@ -10,18 +10,14 @@ import {
 } from 'react-native';
 import Ionicons from 'react-native-vector-icons/Ionicons';
 
-import Bio from '../../components/AccountComponents/Bio';
 
-import ProfilBar from '../../components/AccountComponents/ProfilBar';
 import ProfileHeader from '../../components/AccountComponents/ProfilHeader';
 import Container from '../../components/Container/Container';
-import TopTabNavigator from '../../navigation/TopTabNavigator';
 
 import styles from '../Message/styles';
 
 import styles2 from '../../components/AccountComponents/AccountComponents.style';
 
-//const SingleMessage = ({route, navigation}) => {
 const Search_details = ({route, navigation}) => {
 
   console.log('Search_details');
@@ -46,7 +42,7 @@ const Search_details = ({route, navigation}) => {
         <View style={styles2.bioContainer}>
           <Text style={styles2.userName}> {route.params.name}</Text>
           <Text style={styles2.bio}>
-            {'Atleta'}
+            {route.params.bio}
           </Text>
         </View>
 

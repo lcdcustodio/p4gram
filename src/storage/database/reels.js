@@ -1,7 +1,7 @@
 const data3 = [
   {
     video: require('../videos/reels1.mp4'),
-    image: require('../images/profil.jpg'),
+    image: require('../images/aguia_02.png'),
     user: 'ezgiceylan',
     explanation: 'The memory..',
     likes: 852,
@@ -51,7 +51,7 @@ const data3 = [
   },
   {
     video: require('../videos/reels6.mp4'),
-    image: require('../images/profil3.jpg'),
+    image: require('../images/aguia_02.png'),
     user: 'theart',
     explanation: 'Bu vr harika dostum..',
     likes: 124,

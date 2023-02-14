@@ -13,14 +13,14 @@ import ImagePicker from 'react-native-image-crop-picker';
 import AntDesign from 'react-native-vector-icons/AntDesign';
 import {useNavigation} from '@react-navigation/native';
 
-import DefaultImage from '../../../assets/images/aguia_02.png';
+import DefaultImage from '../../../assets/images/maicon_01.png';
 
 import styles from './ProfilEdit.style';
 
 const ProfilEdit = () => {
-  const [name, setName] = useState('Anderson Águia');
-  const [postname, setPostname] = useState('andersonaguia');  
-  const [bio, setBio] = useState('Atleta');
+  const [name, setName] = useState('Maicon Souza');
+  const [postname, setPostname] = useState('maicon08_oficial');  
+  const [bio, setBio] = useState('jogador');
   const [image, setImage] = useState();
   const navigation = useNavigation();
   const bottomSheet = useRef();
@@ -141,7 +141,7 @@ const ProfilEdit = () => {
             {postname}
           </TextInput>
           <View style={styles.line} />
-          <Text style={styles.inputLabel}>Biografia</Text>
+          <Text style={styles.inputLabel}>Bio</Text>
           <TextInput style={styles.input} onChangeText={item => setBio(item)}>
             {bio}
           </TextInput>
