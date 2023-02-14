@@ -3,7 +3,7 @@ import {Image, SafeAreaView, Alert, Text, TouchableOpacity, View} from 'react-na
 import {useNavigation} from '@react-navigation/native';
 import Ionicons from 'react-native-vector-icons/Ionicons';
 import BottomSheet from 'react-native-gesture-bottom-sheet';
-const defaultImage = require('../../storage/images/ftvblue_01.png');
+const defaultImage = require('../../storage/images/ftvblue_01.jpg');
 const defaultImage2 = require('../../storage/images/dez_01.png');
 
 import styles from './AccountComponents.style';

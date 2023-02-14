@@ -2,7 +2,7 @@ const data = [
   {
     id: 1,
     name: 'Maicon Souza',
-    postName: 'maicon08_oficial',
+    postName: 'maicon08',
     bio: 'jogador',
     image: require('../images/maicon_01.png'),
     postImage: require('../images/maicon_02.png'),
@@ -121,8 +121,8 @@ const data = [
     name: 'Ftv Blue',
     postName: 'grupoftvblue',
     bio: 'grupo',
-    image: require('../images/ftvblue_01.png'),
-    postImage: require('../images/ftvblue_01.png'),
+    image: require('../images/ftvblue_01.jpg'),
+    postImage: require('../images/ftvblue_01.jpg'),
     like: 150,
     comment: 'ver todos os 25 comentários',
     explanation: 'Vem aí, 2023!',
@@ -130,20 +130,7 @@ const data = [
     timeStory: '24s',
     islike: false,
   },
-  {
-    id: 9,
-    name: 'Team Águia',
-    postName: 'grupoteamaguia',
-    bio: 'grupo',
-    image: require('../images/teamaguia_01.png'),
-    postImage: require('../images/teamaguia_02.png'),
-    like: 150,
-    comment: 'ver todos os 25 comentários',
-    explanation: 'Confraternização rolando no Bora Bora Barra!',
-    time: '1 dia',
-    timeStory: '24s',
-    islike: false,
-  },
+  
 
 ];
 export default data;

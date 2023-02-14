@@ -4,6 +4,7 @@ import {
   ScrollView,
   SafeAreaView,
   Text,
+  Alert,
   TouchableOpacity,
   TouchableWithoutFeedback,
   View,
@@ -76,13 +77,22 @@ const Search_details = ({route, navigation}) => {
             >
               <Text style={styles.butonText}>Seguindo</Text>
           </TouchableOpacity>
-          */}
+
 
           <TouchableOpacity 
             style={styles2.icon}            
             onPress={() => navigation.navigate('MessageScreen')}>  
             <Ionicons name="trophy-outline" size={24} color="white" />
           </TouchableOpacity>
+          */}
+
+          <TouchableOpacity 
+            style={styles2.icon}            
+            onPress={() => {                
+              Alert.alert('Em construção');
+            }}>
+            <Ionicons name="trophy-outline" size={24} color="white" />
+          </TouchableOpacity>          
           
         </View>
       </SafeAreaView>

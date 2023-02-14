@@ -26,7 +26,7 @@ const ProfilBar = () => {
         {/*        
         <Feather name="lock" size={18} color="white" />
         */}
-        <Text style={styles.header}>maicon08_oficial</Text>
+        <Text style={styles.header}>maicon08</Text>
         {/*
         <Image
           source={require('../../../assets/images/down.png')}

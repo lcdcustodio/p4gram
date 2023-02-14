@@ -19,7 +19,7 @@ import styles from './ProfilEdit.style';
 
 const ProfilEdit = () => {
   const [name, setName] = useState('Maicon Souza');
-  const [postname, setPostname] = useState('maicon08_oficial');  
+  const [postname, setPostname] = useState('maicon08');  
   const [bio, setBio] = useState('jogador');
   const [image, setImage] = useState();
   const navigation = useNavigation();

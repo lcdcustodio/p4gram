@@ -8,8 +8,8 @@ import Content from '../../components/Content/Content';
 
 import styles from './Login.styles';
 
-const trueEmail = 'p4';
-const truePassword = '5g';
+const trueEmail = 'maicon08';
+const truePassword = 'capita';
 
 const Login = ({navigation}) => {
   const [passwordVisible, setPasswordVisible] = useState(true);

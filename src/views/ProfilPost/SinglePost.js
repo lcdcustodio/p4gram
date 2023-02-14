@@ -26,7 +26,7 @@ const SinglePost = ({navigation}) => {
                 source={require('../../storage/images/maicon_01.png')}
                 style={styles.profilImage}
               />
-              <Text style={styles.title}>maicon08_oficial</Text>
+              <Text style={styles.title}>maicon08</Text>
             </View>
             {/*
             <TouchableOpacity style={{alignSelf: 'center', marginRight: 10}}>
@@ -65,7 +65,7 @@ const SinglePost = ({navigation}) => {
           <Text style={styles.likeText}>700 curtidas</Text>
 
           <View style={{flexDirection: 'row', marginTop: 5, marginBottom: 5}}>
-            <Text style={styles.postName}>maicon08_oficial</Text>
+            <Text style={styles.postName}>maicon08</Text>
             <Text style={{color: 'white', marginTop: 2}}> Obrigado @andersonaguia pelo convite!</Text>
           </View>
 
