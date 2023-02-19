@@ -15,6 +15,8 @@ import FontAwesome from 'react-native-vector-icons/FontAwesome';
 import Ionicons from 'react-native-vector-icons/Ionicons';
 import {useNavigation} from '@react-navigation/native';
 
+import Login from '../../views/Login/Login'
+
 const ProfilBar = () => {
   const bottomSheet = useRef();
   const bottomSheet2 = useRef();
@@ -59,10 +61,14 @@ const ProfilBar = () => {
           <View style={{marginLeft: 15, marginTop: 15}}>
             <TouchableOpacity
                 style={styles.sheet2}
-                onPress={() => {                
-                  Alert.alert('Em construção.');
+                onPress={() => {
+                  navigation.navigate('NewGroup');
+                  bottomSheet2.current.close();  
                 }}>
-              
+                  {/*
+                  navigation.navigate('EditProfile');
+                  */}
+
               <Ionicons name="people" size={28} color="white" />              
               <Text style={styles.label}>Grupo</Text>
             </TouchableOpacity>
@@ -84,9 +90,9 @@ const ProfilBar = () => {
               />
               <Text style={styles.label}>Desafio</Text>
             </View>
+            <View style={styles.line} />
             
             */}
-            <View style={styles.line} />
 
             <TouchableOpacity
               style={styles.sheet2}

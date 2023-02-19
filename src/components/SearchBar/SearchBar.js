@@ -8,7 +8,7 @@ const SearchBar = ({ıconColor, placeHolders}) => {
     <SafeAreaView>
       <View>
         <TextInput
-          placeholder={placeHolders ? 'Arama' : 'Pesquisar'}
+          placeholder={placeHolders ? 'Arama' : 'Pesquisar grupos'}
           placeholderTextColor="grey"
           style={styles.input}
         />

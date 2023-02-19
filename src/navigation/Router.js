@@ -9,6 +9,8 @@ import BottomTab from './BottomTab';
 import EditProfile from './EditProfile';
 import MessageScreen from './MessageScreen';
 
+import NewGroup from './NewGroup';
+
 const Stack = createNativeStackNavigator();
 
 const Router = () => {
@@ -21,6 +23,9 @@ const Router = () => {
       <Stack.Screen name="BottomTab" component={BottomTab} />
       <Stack.Screen name="MessageScreen" component={MessageScreen} />
       <Stack.Screen name="EditProfile" component={EditProfile} />
+
+      <Stack.Screen name="NewGroup" component={NewGroup} />
+
       <Stack.Screen name="Comment" component={Comment} />
       <Stack.Screen
         name="Story"
