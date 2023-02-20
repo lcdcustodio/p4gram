@@ -49,7 +49,7 @@ const ProfilBar = () => {
         <BottomSheet
           hasDraggableIcon
           ref={bottomSheet2}
-          height={450}
+          height={300}
           sheetBackgroundColor="#262626">
           <View style={{alignItems: 'center', marginTop: 15}}>
             <Text style={{color: 'white', fontSize: 18, fontWeight: 'bold'}}>
@@ -103,7 +103,7 @@ const ProfilBar = () => {
               <Ionicons name="flame" size={28} color="white" />
               <Text style={styles.label}>Desafio</Text>
             </TouchableOpacity>
-
+            {/*   
             <TouchableOpacity
               style={styles.sheet2}
               onPress={() => {                
@@ -125,7 +125,7 @@ const ProfilBar = () => {
             </TouchableOpacity>
 
 
-            {/* 
+            
             <View style={styles.sheet2}>
               <Image
                 source={require('../../../assets/images/highlight-story.png')}
@@ -157,7 +157,7 @@ const ProfilBar = () => {
         <BottomSheet
           hasDraggableIcon
           ref={bottomSheet}
-          height={400}
+          height={200}
           sheetBackgroundColor="#262626">
           <View style={{marginTop: 15, marginLeft: 5}}>
             <TouchableOpacity

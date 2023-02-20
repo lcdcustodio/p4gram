@@ -58,8 +58,9 @@ export default StyleSheet.create({
   */
   line: {
     borderBottomColor: '#3a3a3a',
-    borderBottomWidth: 0.6,
+    borderBottomWidth: 1,
     width: '100%',
+    marginTop: 5,
     marginBottom: 5,
   },
 
@@ -94,18 +95,51 @@ export default StyleSheet.create({
   },
 
   create: {
-    backgroundColor: '#0195f7',
+    backgroundColor: '#0195f7',    
     width: '100%',
-    height: 50,
+    height: 60,
     borderRadius: 10,
     justifyContent: 'center',
     alignItems: 'center',
     marginBottom: 10,
   },
+  button: {
+    alignItems: 'center',
+    type:"outline",    
+    backgroundColor: '#ffffff',
+    padding: 10,    
+  
+  },
   createText: {
-    fontSize: 14,
+    fontSize: 18,
     fontWeight: '400',
     color: 'white',
+  },
+
+  sheet2: {
+    backgroundColor: '#262626',
+    marginBottom: 5,
+    marginTop: 5,
+    flexDirection: 'row',
+    alignItems: 'center',
+  },
+  sheet3: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    justifyContent: 'space-between',
+  },
+
+  label2: {
+    color: 'white',
+    fontSize: 18,
+    fontWeight: '500',
+    paddingLeft: 15,
+  },
+  label3: {
+    color: 'white',
+    fontSize: 12,
+    fontWeight: '500',
+    paddingLeft: 15,
   },
 
 });
