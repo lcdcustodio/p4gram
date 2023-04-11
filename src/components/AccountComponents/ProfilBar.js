@@ -15,12 +15,21 @@ import FontAwesome from 'react-native-vector-icons/FontAwesome';
 import Ionicons from 'react-native-vector-icons/Ionicons';
 import {useNavigation} from '@react-navigation/native';
 
+//---------------------
+import { auth } from '../../services/config_firebase';
+//---------------------
+
 import Login from '../../views/Login/Login'
 
 const ProfilBar = () => {
   const bottomSheet = useRef();
   const bottomSheet2 = useRef();
   const navigation = useNavigation();
+
+  const onLogout = () => {
+    auth.signOut();
+  }    
+
 
   return (
     <SafeAreaView style={styles.body}>
@@ -166,9 +175,19 @@ const ProfilBar = () => {
                 navigation.navigate('Settings');
                 bottomSheet.current.close();
               }}>
-              <Ionicons name="settings-sharp" size={28} color="white" />
+              <Ionicons name="settings-outline" size={28} color="white" />
               <Text style={styles.label}>Configurações</Text>
             </TouchableOpacity>
+            <TouchableOpacity
+              style={styles.sheet}
+              onPress={() => {
+                onLogout();
+                bottomSheet.current.close();
+              }}>
+              <Ionicons name="log-out-outline" size={28} color="white" />
+              <Text style={styles.label}>Sair da conta</Text>
+            </TouchableOpacity>
+
             {/*   
             <View style={styles.sheet}>
 

@@ -84,4 +84,17 @@ export default StyleSheet.create({
     justifyContent: 'flex-end',
     height: '22%',
   },
+  containerAnimacao: {
+    flex: 1,
+    backgroundColor: '#3a3a3a',
+    alignItems: "center",
+    justifyContent: "center"
+  },
+  imagem: {
+    width: 300,
+    height: 300,
+    resizeMode: 'contain'
+
+  },
+
 });

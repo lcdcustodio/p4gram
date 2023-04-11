@@ -1,47 +1,122 @@
 import React, {useState} from 'react';
-import {Alert, Image, Text, TouchableOpacity, View} from 'react-native';
-import {Linking} from 'react-native';
+import {Image, 
+         Text, 
+         TouchableOpacity, 
+         ActivityIndicator,
+         View} from 'react-native';
+
 import {TextInput} from 'react-native-paper';
 
 import Container from '../../components/Container/Container';
 import Content from '../../components/Content/Content';
 
 import styles from './Login.styles';
+//--------
+import { Alerts } from '../../components/Alerts/Alerts';
+import { onSingIn } from '../../services/request_firebase';
+//--------
+const logo = require('../../../assets/images/blueberry_text_logo_rev03.png')
 
-const trueEmail = 'M';
-const truePassword = 'C';
 
-const Login = ({navigation}) => {
+const Login = (props) => {
   const [passwordVisible, setPasswordVisible] = useState(true);
 
-  const [name, setName] = useState(null);
+  const [email, setEmail] = useState(null);
   const [password, setPassword] = useState(null);
+
+  const [statusError, setStatusError] = useState('');
+  const [msgError, setMsgError] = useState('');
+  
+  const [isLoading, setIsLoading] = useState(false);
+  /*
+  useEffect(() => {
+    setSplash(false);
+  
+  }, [])   
+  */
+  //*
+  async function onLogIn(){
+    setIsLoading(true)
+    console.log('onLogIn')
+
+    if(email == '' || email == null){
+      setIsLoading(false)
+      setMsgError('Informe o seu endereço de email');
+      setStatusError('all');
+      
+    } else if(password == '' || password == null){
+      setIsLoading(false)
+      setMsgError('Digite a sua senha');
+      setStatusError('all');
+      console.log('password')
+    } else {
+      
+      //setStatusError('all');
+      //setMsgError('Processando...')
+
+      const result = await onSingIn(email, password);
+      
+      if (result == 'error'){
+        setIsLoading(false)
+        setStatusError('all');
+        setMsgError('Seu usuário ou senha está incorreto.')
+      } else {
+
+        //setSplash(true);
+
+      }
+      setIsLoading(false)
+    }    
+
+  } 
+  //*/ 
 
   return (
     <Container insets={{top: true, bottom: true}}>
       <Content>
         <View style={{flex: 1}}>
           <View style={styles.topContainer}>
+             
             <View style={{flexDirection: 'row', alignItems: 'center'}}>
+              {/* 
               <Text style={{color: 'white', opacity: 0.6, fontSize: 14}}>
                 Português(Brasil)
               </Text>
+
               <Image
                 source={require('../../../assets/images/down.png')}
                 style={{width: 12, height: 12}}
               />
+               */}
             </View>
+            
+            
             <Image
               style={styles.logo}
-              source={require('../../../assets/images/blueberry_text_logo_rev03.png')}
+              source={logo}
             />
+            {/*
+            {splash ? (
+              <Image
+                style={styles.logo}
+                source={temp}
+              />
+            ) :
+              (
+              <Image
+                style={styles.logo}
+                source={logo}
+              />
+            )}
+            */}
+
           </View>
 
           <View style={styles.keyboardView}>
             <TextInput
               theme={{colors: {text: 'white'}}}
-              placeholder="endereço de e-mail ou nome de usuário"
-              onChangeText={item => setName(item)}
+              placeholder="endereço de e-mail"
+              onChangeText={item => setEmail(item)}
               placeholderTextColor="grey"
               selectionColor="grey"
               style={styles.textInput}
@@ -67,9 +142,46 @@ const Login = ({navigation}) => {
                 />
               }
             />
+            {/*
+            <Alerts
+              msg={msgError}
+              error={statusError == 'email'}
+              setError={setStatusError}
+            />            
+            */}    
+            <TouchableOpacity
+              onPress={() => onLogIn()}
+              style={styles.login}
+              disabled={email === null && password === null ? true : false}>
+
+              {isLoading ? (
+                  <ActivityIndicator size="large" color="#ffffff" />
+              ) :
+                (
+                  <Text style={styles.loginText}>Entrar</Text>
+              )}
+
+
+
+
+              {/*  
+              <Text style={styles.loginText}>Entrar</Text>
+              {isLoading && (
+              <ActivityIndicator
+                style={{ height: 80 }}
+                color="#C00"
+                size="large"
+              />
+              )}
+              */}
+            </TouchableOpacity>
+
+
+
+            {/*
             <TouchableOpacity
               onPress={() => {
-                trueEmail === name && truePassword === password
+                trueEmail === email && truePassword === password
                   ? navigation.reset({
                       index: 0,
                       routes: [{name: 'BottomTab'}],
@@ -77,10 +189,11 @@ const Login = ({navigation}) => {
                   : Alert.alert('Senha ou nome de usuário incorreto');
               }}
               style={styles.login}
-              disabled={name === null && password === null ? true : false}>
+              disabled={email === null && password === null ? true : false}>
               <Text style={styles.loginText}>Entrar</Text>
             </TouchableOpacity>
-
+            */}
+            
             <View style={{alignItems: 'center', padding: 10}}>
               <View style={styles.text}>
                 <Text style={{fontSize: 12, color: 'grey'}}>
@@ -88,39 +201,36 @@ const Login = ({navigation}) => {
                 </Text>
                 <Text style={styles.help}> Obtenha ajuda para fazer login.</Text>
               </View>
-
-              <View style={styles.seperatorStyle}>
-                <View style={styles.seperator} />
-                <Text style={{color: 'grey'}}> OU </Text>
-                <View style={styles.seperator} />
-              </View>
-
-              <View style={styles.facebook}>
-                <Image
-                  source={require('../../../assets/images/facebook.png')}
-                />
-                <TouchableOpacity
-                  onPress={() => {
-                    Linking.openURL('https://www.facebook.com/login/');
-                  }}>
-                  <Text style={styles.faceText}>Entrar com o Facebook</Text>
-                </TouchableOpacity>
-              </View>
             </View>
+            
+
           </View>
 
-          <View style={styles.bottomContainer}>
+          {/*    
+          <View style={styles.bottomContainer}>    
+          */}
+          <View style={{position: 'absolute', left: 0, right: 0, bottom: 2}}>
             <View style={styles.bottom}>
               <View style={{flexDirection: 'row'}}>
                 <Text style={{fontSize: 12, color: 'grey', marginTop: 15}}>
                   Não tem uma conta?{' '}
                 </Text>
-                <Text style={{...styles.help, marginTop: 15}}> Cadastro.</Text>
+                <Text style={{...styles.help, marginTop: 15, marginBottom: 10}}
+                      onPress={() => props.navigation.navigate("Register1")} > 
+                      Cadastre-se.
+                </Text>
               </View>
 
               <View style={styles.line} />
             </View>
           </View>
+
+          <Alerts
+              msg={msgError}
+              error={statusError == 'all'}
+              setError={setStatusError}
+            />            
+
         </View>
       </Content>
     </Container>

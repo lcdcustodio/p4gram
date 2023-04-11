@@ -13,12 +13,13 @@ const data3 = [
     video: require('../videos/reels2.mp4'),
     image: require('../images/profil5.jpg'),
     user: 'guneys',
-    explanation: 'Arkadaşlarımı çok seviyorum <3',
+    explanation: 'To be defined',
     likes: 25,
     comment: '14',
     isLike: false,
     follow: true,
   },
+  /*
   {
     video: require('../videos/reels3.mp4'),
     image: require('../images/cat.jpg'),
@@ -59,5 +60,6 @@ const data3 = [
     isLike: false,
     follow: true,
   },
+  */
 ];
 export default data3;
