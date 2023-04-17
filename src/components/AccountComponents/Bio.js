@@ -19,10 +19,10 @@ const Bio = ({route}) => {
   return (
     <SafeAreaView>
       <View style={styles.bioContainer}>
-        <Text style={styles.userName}> {route ? route.name : 'Maicon Souza'}</Text>
+        <Text style={styles.userName}> {route.name}</Text>
 
         <Text style={styles.bio}>
-          {route ? route.bio : 'jogador'}
+          {route.level}
         </Text>
       </View>
 

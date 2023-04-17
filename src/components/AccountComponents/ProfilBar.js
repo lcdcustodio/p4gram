@@ -19,9 +19,13 @@ import {useNavigation} from '@react-navigation/native';
 import { auth } from '../../services/config_firebase';
 //---------------------
 
-import Login from '../../views/Login/Login'
 
-const ProfilBar = () => {
+const ProfilBar = ({route}) => {
+
+  console.log('ProfilBar');
+  console.log(route);
+  //console.log(route.username);
+
   const bottomSheet = useRef();
   const bottomSheet2 = useRef();
   const navigation = useNavigation();
@@ -34,16 +38,17 @@ const ProfilBar = () => {
   return (
     <SafeAreaView style={styles.body}>
       <View style={styles.left}>
-        {/*        
+                 
         <Feather name="lock" size={18} color="white" />
+        <Text style={styles.header}>{route.username}</Text>
+        {/* 
+        <Text style={styles.header}>{route.username}</Text>
         */}
-        <Text style={styles.header}>maicon08</Text>
-        {/*
         <Image
           source={require('../../../assets/images/down.png')}
           style={{width: 18, height: 18}}
         />
-        */}
+        {/* */}
       </View>
 
       <View style={styles.right}>
@@ -255,8 +260,8 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     alignItems: 'center',
     width: '43%',
-    justifyContent: 'space-around',
-    marginLeft: 10,
+    //justifyContent: 'space-around',
+    marginLeft: 5,
   },
   right: {
     flexDirection: 'row',
@@ -269,6 +274,8 @@ const styles = StyleSheet.create({
     color: 'white',
     fontWeight: 'bold',
     fontSize: 22,
+    marginRight: 5,
+    marginLeft: 5,
   },
   icon: {
     width: 28,

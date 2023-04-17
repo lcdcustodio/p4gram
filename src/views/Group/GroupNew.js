@@ -1,13 +1,10 @@
 import React, {useRef, useState} from 'react';
 import {
-  Image,
-  Linking,
+  Image,  
   SafeAreaView,
   Text,
-  TextInput,
-  Alert,
+  ActivityIndicator,
   TouchableOpacity,
-  Button,
   View,
 } from 'react-native';
 import BottomSheet from 'react-native-gesture-bottom-sheet';
@@ -18,21 +15,38 @@ import {useNavigation} from '@react-navigation/native';
 
 import Ionicons from 'react-native-vector-icons/Ionicons';
 
+import {TextInput, HelperText } from 'react-native-paper';
+import { Alerts } from '../../components/Alerts/Alerts';
+import { auth } from '../../services/config_firebase';
+import { onRegisterGroup, userNameAvailable } from '../../services/request_firebase';
 
-import DefaultImage from '../../../assets/images/group-128.png';
+import DefaultImage from '../../../assets/images/ftv2.png';
 
 import styles from './GroupNew.style';
+import styles2 from '../Group/BottomSheet.style';
+
 
 const GroupNew = () => {
-  const [group_name, setGroupName] = useState('tbd');
-  const [privacy, setPrivacy] = useState('tbd');
-  const [group_postname, setGroupPostname] = useState('tbd');  
-  const [bio, setBio] = useState('jogador');
-  const [image, setImage] = useState();
+  const [groupName, setGroupName] = useState('');
+  const [groupUserName, setGroupUserName] = useState('');  
+  //----------
+  const [isClosedGroup, setIsClosedGroup] = useState(false);
+  const [isPrivacySelected, setIsPrivacySelected] = useState(false);
+  const [isLoading, setIsLoading] = useState(false);  
+  //----------
+  const [statusGroupUserNameError, setStatusGroupUserNameError] = useState('');
+  const [msgGroupUserNameError, setMsgGroupUserNameError] = useState('');
+
+  const [msgError, setMsgError] = useState('');
+  const [statusError, setStatusError] = useState('');
+
+  const [groupUserNameError, setGroupUserNameError] = useState(false);
+  //----------  
+  const [image, setImage] = useState(null);
   const navigation = useNavigation();
   const bottomSheet = useRef();
 
-  console.log(privacy);
+  
 
   const chooseFromLibrary = () => {
     ImagePicker.openPicker({
@@ -40,10 +54,104 @@ const GroupNew = () => {
       height: 100,
       cropping: true,
     }).then(images => {
-      setImage(images?.path);
-      //bottomSheet.current.close();
+      setImage(images?.path);      
     });
   };
+
+  async function onCreateGroup(){
+
+    console.log('onCreateGroup')
+
+    if(groupName == '' || groupName == null){
+      
+      setMsgError('Digite um nome para o Grupo');
+      setStatusError('all');  
+
+    } else if(groupUserName == '' || groupUserName == null){
+      
+      setMsgError('Digite um nome de usuário para o Grupo');
+      setStatusError('all');       
+      
+    } else if(!isPrivacySelected){
+
+      setMsgError('Escolha a privacidade');
+      setStatusError('all');       
+
+    } else if(groupUserNameError){  
+  
+      setMsgError('Nome de usuário: ' + msgGroupUserNameError);
+      setStatusError('all');  
+
+      
+    
+    }else {
+      setIsLoading(true)
+      const resCheckUserName = await userNameAvailable(groupUserName);
+      console.log('resCheckUserName')
+      console.log(resCheckUserName)
+
+      if (resCheckUserName == 'success'){
+        //setIsLoading(false)
+        
+        const result = await onRegisterGroup(groupUserName, groupName, image, isClosedGroup)
+        //*
+        //const result = await onRegisterGroup(groupUserName, groupName, image, auth.currentUser.uid);        
+
+        if (result == 'success'){
+          console.log(result)
+          setMsgError('Grupo cadastrado com sucesso!');
+          setStatusError('all');
+          setIsLoading(false);
+          navigation.goBack()
+        } else {
+          console.log(result)
+          setMsgError(result);
+          setStatusError('all');
+          setIsLoading(false);
+        }
+        //*/
+
+
+      }  else{
+        console.log('resCheckUserName')
+        console.log(resCheckUserName)
+        setMsgError(resCheckUserName);
+        setStatusError('all');
+        setIsLoading(false);
+      }  
+
+
+    }
+
+  }
+
+  function typeUserName(input){
+
+    console.log(input)
+
+    setGroupUserName(input)
+
+    const regexUserName = /^[a-z][a-z0-9\.]{1,20}$/;
+    if(input.length < 6 || input.length > 10){    
+
+      setMsgGroupUserNameError('Deve ter de 6 à 10 caracteres');
+      setGroupUserNameError(true);
+      setStatusGroupUserNameError('username');  
+
+    } else if(!regexUserName.test(input)){  
+    
+      setMsgGroupUserNameError('Use apenas letras minúsculas, números, sublinhados e pontos.');
+      setGroupUserNameError(true);
+      setStatusGroupUserNameError('username');  
+
+    } else{
+      setMsgError('');
+      setGroupUserNameError(false);
+      setStatusGroupUserNameError('');  
+
+    }
+
+  }  
 
   return (
     <SafeAreaView style={styles.body}>
@@ -64,10 +172,7 @@ const GroupNew = () => {
           <View style={styles.right}>
             <TouchableOpacity
               onPress={() => {
-              navigation.goBack();
-              console.log(privacy);
-              console.log(group_name);
-              console.log(group_postname);                            
+                onCreateGroup();
               }}>
               <AntDesign
                 name="check"
@@ -92,43 +197,109 @@ const GroupNew = () => {
           </TouchableOpacity>
 
         </View>
-        {/* */}  
+
         <View style={styles.inputContainer}>
         
-          <Text style={styles.inputLabel}>Nome do grupo</Text>
-          <TextInput 
-            style={styles.input} 
-            onChangeText={item => setGroupName(item)}   
-            //placeholder="Ftv Blueberry"
-            //placeholderTextColor="grey"      
-          />
-          {/* */}  
-          <View style={styles.line} />
-          
-          <Text style={styles.inputLabel}>Nome de usuário</Text>          
-          <TextInput 
-            style={styles.input} 
-            onChangeText={item => setGroupPostname(item)}   
-            //onChangeText={item => setPostname(item)}   
-            //placeholder="blue.berry"
-            //placeholderTextColor="grey"         
-          />
-          <View style={styles.line} />
+          <TextInput
+                theme={{colors: {text: 'white'}}}
+                placeholder="Nome"
+                onChangeText={item => setGroupName(item)}
+                placeholderTextColor="grey"
+                selectionColor="grey"
+                style={styles.textInput}
+                activeOutlineColor="grey"
+                activeUnderlineColor="#3a3a3a"
+                
+              />
 
-          
+            <View style={{marginTop:5,marginBottom:5}}></View>
+
+            <TextInput
+              theme={{colors: {text: 'white'}}}
+              placeholder="Nome de usuário"
+              placeholderTextColor="grey"
+              onChangeText={itemP => typeUserName(itemP)}
+              style={styles.textInput}
+              selectionColor="grey"
+              activeUnderlineColor="#3a3a3a"
+              activeOutlineColor="#3a3a3a"
+            />
+
+            <HelperText 
+              type="error" 
+              style={{
+                color: 'white'
+              }}
+              visible={statusGroupUserNameError == 'username'}>
+              {msgGroupUserNameError}
+            </HelperText>
+
+            {/*  
+            <View style={styles2.line}></View>            
+            */}
+            
+
+            <View style={styles.keyboardView}>
+              
+              {!isLoading ? (                
+		              <Text style={styles.inputLabel2}>Privacidade</Text>          
+                ) :(
+		              <Text style={styles.inputLabel2}>Processando...</Text>                                    
+                )
+              }              
+              
+              <TouchableOpacity
+                style={styles.position_btn}
+                onPress={() => {bottomSheet.current.show()}}>              
+
+                {!isPrivacySelected ? (                
+                  <View style={{alignItems: 'center',flexDirection: 'row'}}>                    
+                    <Text style={styles.editText2}>Selecione</Text>
+                  </View>
+                ) :
+                  (
+                    !isClosedGroup ? (                                      
+
+                      isLoading ? (
+
+                        <ActivityIndicator size="large" color="#ffffff" />
+
+                      ) :(
+
+                        <View style={{alignItems: 'center',flexDirection: 'row'}}>
+                          <Ionicons name="lock-open-outline" size={24} color="white" />
+                          <Text style={styles.editText2}>Grupo Aberto</Text>
+                        </View>
+                        
+                      )                    
+      
+
+                    ) :
+                      (
+
+                      isLoading ? (
+
+                        <ActivityIndicator size="large" color="#ffffff" />
+
+                      ) :(
+                        <View style={{alignItems: 'center',flexDirection: 'row'}}>
+                          <Ionicons name="lock-closed-outline" size={24} color="white" />
+                          <Text style={styles.editText2}>Grupo Fechado</Text>
+                        </View>
+                        
+                      )                            
+                    )
+                )}
+
+
+              </TouchableOpacity>   
+
+
+
+            </View>  
+
+
         </View>
-        {/*        
-        <Text style={styles.inputLabel}>Privacidade</Text>          
-        */}
-        <TouchableOpacity
-              //onPress={() => {
-              //  Alert.alert('Senha ou nome de usuário incorreto');
-              //}}
-              onPress={() => bottomSheet.current.show()}
-              style={styles.create}>
-              <Text style={styles.createText}>{privacy == 'tbd' ? 'Definir Privacidade' : privacy == 'open' ? 'Grupo Aberto' : 'Grupo Fechado'}</Text> 
-        </TouchableOpacity>
-
 
         <BottomSheet
           hasDraggableIcon
@@ -137,46 +308,56 @@ const GroupNew = () => {
           sheetBackgroundColor="#262626">
           <View style={{alignItems: 'center', marginTop: 15}}>
             <Text style={{color: 'white', fontSize: 18, fontWeight: 'bold'}}>
-              Escolher Privacidade
+              Privacidade
             </Text>
           </View>
-          <View style={styles.line} />
+          <View style={styles2.line} />
 
           <View style={{marginLeft: 15, marginTop: 15}}>
             <TouchableOpacity
-                style={styles.sheet2}
+                style={styles2.sheet2}
                 onPress={() => {
-                  setPrivacy('open');
-                  console.log(privacy);
+                  //setPrivacy('Grupo Aberto');
+                  setIsPrivacySelected(true)
+                  setIsClosedGroup(false)
+                  //console.log(privacy);
                   bottomSheet.current.close();  
                 }}>
 
-              <Ionicons name="lock-open-outline" size={48} color="white" />              
+              <Ionicons name="lock-open-outline" size={42} color="white" />              
               <View>                
-                  <Text style={styles.label2}>Grupo Aberto</Text>
-                  <Text style={styles.label3}>Qualquer um pode seguir o grupo</Text>
+                  <Text style={styles2.label2}>Grupo Aberto</Text>
+                  <Text style={styles2.label3}>Qualquer um pode seguir o grupo</Text>
               </View>
             </TouchableOpacity>
 
             <TouchableOpacity
-                style={styles.sheet2}
+                style={styles2.sheet2}
                 onPress={() => {                
-                  setPrivacy('closed');
-                  console.log(privacy);
+                  //setPrivacy('Grupo Fechado');
+                  setIsPrivacySelected(true)
+                  setIsClosedGroup(true)
+                  //console.log(privacy);
                   bottomSheet.current.close();  
                 }}>
               
-              <Ionicons name="lock-closed-outline" size={48} color="white" />
+              <Ionicons name="lock-closed-outline" size={42} color="white" />
               <View>                
-                  <Text style={styles.label2}>Grupo Fechado</Text>
-                  <Text style={styles.label3}>Você aprova as solicitações para seguir o grupo</Text>
+                  <Text style={styles2.label2}>Grupo Fechado</Text>
+                  <Text style={styles2.label3}>Você aprova as solicitações para seguir o grupo</Text>
               </View>
             </TouchableOpacity>
           </View>
         </BottomSheet>
-
+  
         
       </View>
+
+      <Alerts
+        msg={msgError}
+        error={statusError == 'all'}
+        setError={setStatusError}
+      />            
 
     </SafeAreaView>
   );

@@ -32,7 +32,8 @@ export function fetchUser() {
       ////console.log('docSnap: ' + docSnap.data());
 
       if (docSnap.exists()) {
-          //console.log("Document data:", docSnap.data());
+          console.log("Document data:", docSnap.data());
+          console.log("auth.currentUser.uid:", auth.currentUser.uid);
           dispatch({ type: USER_STATE_CHANGE, currentUser: { uid: auth.currentUser.uid, ...docSnap.data() } })
 
       } else {          

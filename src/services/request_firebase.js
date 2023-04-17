@@ -45,7 +45,108 @@ export async function userNameAvailable(username) {
 
 }  
 
-export async function onRegister(email, password, username, name_,image_,position_, level_, ct_) {
+export function getTimestamp(){
+
+  var timestamp = new Date().getFullYear().toString() + 
+                  new Date().getMonth().toString() +
+                  new Date().getDate().toString() + 
+                  new Date().getHours().toString() +
+                  new Date().getMinutes().toString() +
+                  new Date().getSeconds().toString() +
+                  new Date().getMilliseconds().toString()
+
+  return timestamp
+}
+
+export async function onFollow(following){
+
+  const docRef = doc(db, 'following', auth.currentUser.uid);
+  const colRef = collection(docRef, 'userFollowing')
+  await setDoc(doc(colRef, following), {})
+
+}
+
+
+export async function setOwner(owner){
+
+  const docRef = doc(db, 'ownership', auth.currentUser.uid);
+  const colRef = collection(docRef, 'userGroup')
+  await setDoc(doc(colRef, owner), {})
+
+}
+
+
+export async function onRegisterGroup(username, name_, image_, isClosedGroup_){
+
+
+  const doc_name = auth.currentUser.uid.toString() + '_group_' + getTimestamp()
+
+  //const result = await setDoc(doc(db, 'users', doc_name), {
+
+  let result
+
+  result = await setDoc(doc(db, 'users', doc_name), {
+    name: name_,
+    username: username,
+    image: image_,    
+    followersCount: 1,
+    matchCount: 0,
+    scoreCount: 0,
+    isClosedGroup: isClosedGroup_,
+    owner: auth.currentUser.uid,
+    type: 'group'     
+  })    
+  .then(() => {
+    console.log("Successful - Register User")
+    return 'success'
+    
+  })
+    .catch((error) => {
+    console.log(`Unsuccessful returned error ${error}`)
+    return error
+  });
+
+  console.log(result)
+
+  if(result == 'success'){
+
+    result = await onFollow(doc_name)
+    .then(() => {
+      console.log("Successful - Register Following")
+      return 'success'
+
+    })  
+    .catch((error) => {
+      console.log(`Unsuccessful returned error ${error}`)
+      return error
+    });  
+
+  } 
+  console.log('----------')
+  console.log(result)
+  console.log('----------')
+  
+  if(result == 'success'){
+
+    result = await setOwner(doc_name)
+    .then(() => {
+      console.log("Successful - Register Owner")
+      return "success"
+    })  
+    .catch((error) => {
+      console.log(`Unsuccessful returned error ${error}`)
+      return error
+    });   
+
+  }
+
+  console.log(result)
+  return result;
+
+
+}
+
+export async function onRegisterUser(email, password, username, name_,image_,position_, level_) {
 
   
   const result = await createUserWithEmailAndPassword(auth, email, password)
@@ -67,9 +168,14 @@ export async function onRegister(email, password, username, name_,image_,positio
     image: image_,
     followingCount: 0,
     followersCount: 0,
+    matchCount: 0,
+    scoreCount: 0,
+    winCount: 0,
+    lossCount: 0,
     position: position_,
     level: level_,
-    ct: ct_      
+    ct: ct_,
+    type: 'player'     
   })    
   .then(() => {
     console.log("Successful")
@@ -77,6 +183,7 @@ export async function onRegister(email, password, username, name_,image_,positio
   })
     .catch((error) => {
     console.log(`Unsuccessful returned error ${error}`)
+    return error
   });
 
 

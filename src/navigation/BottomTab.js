@@ -82,7 +82,18 @@ export class BottomTab extends React.Component {
         <Tab.Screen name="StoreScreen" component={StoreScreen} />
         */}
         <Tab.Screen name="Discover" component={Discover} />
-        <Tab.Screen name="AccountScreen" component={AccountScreen} />
+        
+        <Tab.Screen name="AccountScreen" component={AccountScreen} navigation={this.props.navigation}/>
+        {/*
+        <Tab.Screen name="AccountScreen" component={AccountScreen} navigation={this.props.navigation}
+            listeners={({ navigation }) => ({
+                tabPress: event => {
+                    event.preventDefault();
+                    navigation.navigate("AccountScreen", { uid: auth.currentUser.uid })
+                }
+            })}/>
+        */}
+
       </Tab.Navigator>
     )
   }  
@@ -92,6 +103,12 @@ export class BottomTab extends React.Component {
 const mapStateToProps = (store) => ({
   currentUser: store.userState.currentUser
 })
+
+console.log('----------------------')
+console.log('this.props - BottonTab')
+console.log(this.props)
+console.log('----------------------')
+
 const mapDispatchProps = (dispatch) => bindActionCreators({fetchUser, fetchUserPosts, fetchUserFollowing, clearData  }, dispatch);
 
 export default connect(mapStateToProps, mapDispatchProps)(BottomTab);

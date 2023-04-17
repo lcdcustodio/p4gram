@@ -31,8 +31,9 @@ const Home = () => {
         refreshControl={
           <RefreshControl refreshing={refreshing} onRefresh={onRefresh} />
         }>
+        {/*  
         <Stories />
-        {/* */}
+         */}
         <Post />
       </ScrollView>
     </Container>

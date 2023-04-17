@@ -16,14 +16,14 @@ export const user = (state = initialState, action) => {
     console.log('reducer user state: ' + state)        
     console.log('----------------------')
     */
+    console.log('reducer user action.currentUser: ' + action.currentUser)
 
-
-    switch (action.type) {
+    switch (action.type) {        
         case USER_STATE_CHANGE:
             return {
                 ...state,
                 currentUser: action.currentUser
-            }
+            }        
         case USER_POSTS_STATE_CHANGE:
             return {
                 ...state,

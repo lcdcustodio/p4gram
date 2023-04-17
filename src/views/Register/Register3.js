@@ -9,10 +9,11 @@ import BottomSheet from 'react-native-gesture-bottom-sheet';
 import Ionicons from 'react-native-vector-icons/Ionicons';
 
 import styles from './Register.style';
-import styles2 from '../Group/GroupNew.style';
+import styles2 from '../Group/BottomSheet.style';
+//import styles2 from '../Group/GroupNew.style';
 //--------
 import { Alerts } from '../../components/Alerts/Alerts';
-import { onRegister, userNameAvailable } from '../../services/request_firebase';
+import { onRegisterUser, userNameAvailable } from '../../services/request_firebase';
 
 
 import ImagePicker from 'react-native-image-crop-picker';
@@ -82,7 +83,7 @@ const Register3 = (props) => {
 
       if (resCheckUserName == 'success'){
 
-        const result = await onRegister(props.route.params.email, 
+        const result = await onRegisterUser(props.route.params.email, 
           props.route.params.password,props.route.params.username,
           props.route.params.name, image, position, level, ct);
 

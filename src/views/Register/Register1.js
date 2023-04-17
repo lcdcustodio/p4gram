@@ -54,13 +54,16 @@ const Register1 = (props) => {
     setUserName(input)
 
     const regexUserName = /^[a-z][a-z0-9\.]{1,20}$/;
-    const minLengthRegExp   = /.{6,20}/;
+    //const minLengthRegExp   = /.{6,10}/;
+    //const maxLengthRegExp   = /.{,10}/;
     //const regexUserName = /^[a-z][a-z0-9\.]$/;
+    //console.log(minLengthRegExp.test(input))
+    //console.log(maxLengthRegExp.test(input))
 
+    //if(!minLengthRegExp.test(input)){  
+    if(input.length < 6 || input.length > 10){    
 
-    if(!minLengthRegExp.test(input)){  
-
-      setMsgUserNameError('Use seis ou mais caracteres');
+      setMsgUserNameError('Deve ter de 6 à 10 caracteres');
       setUserNameError(true);
       setStatusUserNameError('username');  
 
@@ -68,7 +71,8 @@ const Register1 = (props) => {
     } else if(!regexUserName.test(input)){  
   
       //setMsgError('Use seis ou mais caracteres com  uma combinação de letras letras minúsculas (a-z), números (0-9) e ponto (.)');
-      setMsgUserNameError('Você pode usar letras minúsculas, números e pontos finais');
+      //setMsgUserNameError('Você pode usar letras minúsculas, números e pontos finais');
+      setMsgUserNameError('Use apenas letras minúsculas, números, sublinhados e pontos.');
       setUserNameError(true);
       setStatusUserNameError('username');  
 
@@ -204,66 +208,7 @@ const Register1 = (props) => {
               {msgUserNameError}
             </HelperText>              
 
-
-          {/*
-          <Text style={styles.inputLabel}>Nome</Text>
-            <TextInput 
-              style={styles.input} 
-              activeUnderlineColor="#3a3a3a"
-              theme={{colors: {text: 'white'}}}
-              onChangeText={item => setName(item)}/>            
-            
-            <View style={styles.line} />
-            
-            <Text style={styles.inputLabel}>Nome de usuário</Text>
-            
-            <TextInput 
-              style={styles.input} 
-              activeUnderlineColor="#3a3a3a"
-              theme={{colors: {text: 'white'}}}
-              onChangeText={item => setUserName(item)}/>
-
-            <HelperText type="error" visible={statusError == 'username'}>
-              Email address is invalid!
-            </HelperText>              
-            
-            <View style={styles.line} />
-
-            <Text style={styles.inputLabel}>Email</Text>
-            
-            <TextInput 
-              style={styles.input} 
-              activeUnderlineColor="#3a3a3a"
-              theme={{colors: {text: 'white'}}}
-              onChangeText={item => setEmail(item)}/>
-              
-            
-            <View style={styles.line} />
-
-
-            */}       
-
         </View>
-        {/*
-        <Text style={styles.label}>Posição em quadra</Text>      
-
-        
-         <View style={styles.line} />
-        <Text style={styles.label}>Posição em quadra:</Text>
-                <View style={styles.topContainer}>
-            <View style={styles.left}>
-              <Text style={styles.label}>Posição:</Text>
-            </View>
-            </View>
-
-        <TouchableOpacity
-              onPress={() => onLogIn()}
-              style={styles.create}>
-              <Text style={styles.createText}>Continuar</Text> 
-        </TouchableOpacity>
-        */}        
-
-
         
       </View>
 
