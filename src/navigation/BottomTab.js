@@ -1,9 +1,9 @@
 import React from 'react';
 import {Image, View} from 'react-native';
-import {Avatar} from 'react-native-paper';
 import Feather from 'react-native-vector-icons/Feather';
 import Foundation from 'react-native-vector-icons/Foundation';
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
+import Ionicons from 'react-native-vector-icons/Ionicons';
 
 import Discover from '../views/Discover/Discover';
 import Search from '../views/Search/Search';
@@ -53,14 +53,29 @@ export class BottomTab extends React.Component {
               );
             }
             if (route.name === 'SearchScreen') {
-              return <Feather name="search" size={28} color="white" />;
+              return focused ? (
+                <Ionicons name="search" size={28} color="white" />
+              ) : (
+                <Ionicons name="search-outline" size={28} color="white" />                
+                
+              );
+
+
             }
             if (route.name === 'Discover') {
               return <Feather name="video" size={28} color="white" />;
             }
             if (route.name === 'AccountScreen') {
-              return <Feather name="user" size={30} color="white" />;
+              return focused ? (
+                <Ionicons name="person" size={28} color="white" />
+              ) : (
+                <Ionicons name="person-outline" size={28} color="white" />                
+              );
+
+              
               /*
+              return <Feather name="search" size={28} color="white" />;
+              return <Feather name="user" size={30} color="white" />;
               return (
                 <Avatar.Image
                   size={28}

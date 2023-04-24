@@ -8,15 +8,9 @@ const initialState = {
 
 export const user = (state = initialState, action) => {
 
-    /*
     console.log('----------------------')
-    console.log('reducer user action.currentUser: ' + action.currentUser)
-    console.log('reducer user action.posts: ' + action.posts)    
-    console.log('reducer user action.following: ' + action.following)
-    console.log('reducer user state: ' + state)        
+    console.log('reducer user action.currentUser: ' + action.currentUser)    
     console.log('----------------------')
-    */
-    console.log('reducer user action.currentUser: ' + action.currentUser)
 
     switch (action.type) {        
         case USER_STATE_CHANGE:

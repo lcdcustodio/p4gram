@@ -26,7 +26,9 @@ export function fetchUser() {
     return async function action(dispatch) {
 
       //console.log(authentication.currentUser.uid);
-      //console.log('lala');
+      console.log('---------');
+      console.log('fetchUser');
+      console.log('---------');      
       const docRef = doc(db, 'users', auth.currentUser.uid);
       const docSnap = await getDoc(docRef);
       ////console.log('docSnap: ' + docSnap.data());
@@ -151,44 +153,13 @@ export function fetchUsersFollowingPosts(uid) {
     const colRef = collection(docRef, 'userPosts')
     const q = query(colRef, orderBy('creation', 'asc'));
 
-    //await getDocs(q)
-    /*
-    const querySnapshot = await getDocs(q)
-    querySnapshot.forEach((doc) => {
-      console.log(doc.id, " => ", doc.data());
-      console.log(" uid  => ", uid);
-      let posts = doc => {
-        const data = doc.data();
-        const id = doc.id;
-        return { id, ...data, user }
-      }
-
-      console.log(" posts  => ", posts);
-
-      for(let i = 0; i< posts.length; i++){
-        console.log ('---------')
-        console.log ('uid: ' + uid)
-        console.log ('posts[i].id: ' + posts[i].id)
-        console.log ('---------')
-  
-        dispatch(fetchUsersFollowingLikes(uid, posts[i].id))
-      }        
-  
-      dispatch({ type: USERS_POSTS_STATE_CHANGE, posts, uid })
-  
-
-    })
-    */  
-    
-
-    //*
     await getDocs(q)
     .then(querySnapshot => {
         //const uid = querySnapshot.query.EP.path.segments[1];
         const user = getState().usersState.users.find(el => el.uid === uid);
         console.log ('--------')
         console.log ('user: ' + user)
-        console.log ('uid: ' + uid)
+        console.log ('uid FollowingPosts: ' + uid)
         //console.log ('querySnapshot.data(): ' + querySnapshot.data())
         console.log ('---------')
 

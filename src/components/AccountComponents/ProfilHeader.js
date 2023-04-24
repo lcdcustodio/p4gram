@@ -4,7 +4,7 @@ import DefaultImage from '../../../assets/images/ftv.png';
 const ProfileHeader = ({route}) => {
 
   console.log('ProfileHeader');
-  console.log(route.image);
+  //console.log(route.image);
 
   return (
     <View style={styles.container3}>

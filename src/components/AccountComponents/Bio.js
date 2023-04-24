@@ -9,20 +9,25 @@ const defaultImage2 = require('../../storage/images/dez_01.png');
 import styles from './AccountComponents.style';
 import styles2 from '../../views/Message/styles';
 
-const Bio = ({route}) => {
+//---------------------
+import { connect } from 'react-redux'
+//---------------------
+
+//const Bio = ({route}) => {
+function Bio(props) {
   const navigation = useNavigation();
   const bottomSheet3 = useRef();
    
-  console.log('bio');
-  console.log(route);
+  console.log('-bio-');
+  //console.log(props);
   {/* */}
   return (
     <SafeAreaView>
       <View style={styles.bioContainer}>
-        <Text style={styles.userName}> {route.name}</Text>
+        <Text style={styles.userName}>{props.currentUser.name}</Text>
 
         <Text style={styles.bio}>
-          {route.level}
+          {props.currentUser.level}
         </Text>
       </View>
 
@@ -35,6 +40,14 @@ const Bio = ({route}) => {
         <TouchableOpacity
           style={styles.edit}
           onPress={() => navigation.navigate('EditProfile')}>
+              {/*
+              name: 'EditProfile',
+              params: {
+                username: route.username,
+                name: route.name,                  
+                image: route.image,                
+              }})}>
+             */}
           <View style={{alignItems: 'center'}}>
             <Text style={styles.editText}>Editar Perfil</Text>
           </View>
@@ -105,5 +118,10 @@ const Bio = ({route}) => {
     </SafeAreaView>
   );
 };
+const mapStateToProps = (store) => ({
+  currentUser: store.userState.currentUser
+})
 
-export default Bio;
+export default connect(mapStateToProps, null)(Bio);    
+
+//export default Bio;

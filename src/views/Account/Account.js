@@ -23,7 +23,7 @@ function Account(props) {
   console.log('-----------');
   console.log('--Account--');
   console.log('-----------'); 
-  console.log(props);
+  //console.log(props);
 
 
   useEffect(() => {
@@ -46,6 +46,7 @@ function Account(props) {
       <ProfileHeader route={props.currentUser} />
       <Bio route={props.currentUser} />
       {/* 
+      <Bio route={props.currentUser} />
       <ProfilBar route={user} />
       <ProfileHeader route={user} />
       <Bio route={user} />

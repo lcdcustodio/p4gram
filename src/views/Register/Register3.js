@@ -1,4 +1,4 @@
-import React, {useState, useRef} from 'react';
+import React, {useState, useRef, useEffect} from 'react';
 import {Image, 
         Text, 
         TouchableOpacity, 
@@ -10,7 +10,6 @@ import Ionicons from 'react-native-vector-icons/Ionicons';
 
 import styles from './Register.style';
 import styles2 from '../Group/BottomSheet.style';
-//import styles2 from '../Group/GroupNew.style';
 //--------
 import { Alerts } from '../../components/Alerts/Alerts';
 import { onRegisterUser, userNameAvailable } from '../../services/request_firebase';
@@ -24,8 +23,10 @@ import AntDesign from 'react-native-vector-icons/AntDesign';
 //--------
 
 
-const Register3 = (props) => {
+//--------
 
+const Register3 = (props) => {
+//function Register3(props) {  
 
   const [position, setPosition] = useState('Selecione');
   const [level, setLevel] = useState('Selecione');
@@ -40,12 +41,41 @@ const Register3 = (props) => {
   const bottomSheet3 = useRef();
 
   const [isLoading, setIsLoading] = useState(false);
+  const [isUpdatingData, setIsUpdatingData] = useState(false);  
   //------------------
 
   console.log('props')
-  console.log(props.route.params)
+  console.log(props)
 
   //------------------
+  /*
+
+  const { dispatch } = props
+  
+  useEffect(() => {
+  
+    
+    console.log('-----------------------')
+    console.log('useEffect - Register3')
+    console.log('-----------------------')
+      
+    
+      */
+    /*
+    return (() =>{
+
+      if (isUpdatingData){        
+        console.log('-----------------------')
+        console.log('useEffect - Register3')
+        console.log('-----------------------')
+    
+      }
+  
+    })
+    */ 
+  
+ // },[isLoading])
+
 
   const chooseFromLibrary = () => {
     ImagePicker.openPicker({
@@ -88,10 +118,23 @@ const Register3 = (props) => {
           props.route.params.name, image, position, level, ct);
 
         if (result == 'success'){
-          console.log(result)
+
+          //setIsUpdatingData(true)
+
+          //setInterval(() => { console.log(new Date().getSeconds().toString())},5000)
+          //console.log(new Date().getSeconds().toString())
+
+          console.log('setIsUpdatingData(true)')
           setMsgError('Usuário cadastrado com sucesso!');
           setStatusError('all');
           setIsLoading(false);
+
+          //-----------------
+          //console.log('props.navigation.close()')
+          //props.navigation.close();
+
+          //-----------------
+
         } else {
           console.log(result)
           setMsgError(result);
@@ -455,5 +498,10 @@ const Register3 = (props) => {
     </SafeAreaView>
   );
 };
-
+/*
+const mapStateToProps = (store) => ({
+  currentUser: store.userState.currentUser
+})
+export default connect(mapStateToProps, null)(Register3);    
+*/
 export default Register3;

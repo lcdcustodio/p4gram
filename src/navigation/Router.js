@@ -49,10 +49,18 @@ export class Router extends React.Component {
           loaded: true,
         })
       } else {
+        setTimeout(function() { //Start the timer
+          this.setState({
+            loggedIn: true,
+            loaded: true,  
+          }) 
+        }.bind(this), 3000) //After 3 seconds
+        /*
         this.setState({
           loggedIn: true,
           loaded: true,
         })
+        */
       }
     })
   }

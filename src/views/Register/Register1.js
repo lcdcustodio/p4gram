@@ -53,7 +53,8 @@ const Register1 = (props) => {
 
     setUserName(input)
 
-    const regexUserName = /^[a-z][a-z0-9\.]{1,20}$/;
+    //const regexUserName = /^[a-z][a-z0-9\.]{1,20}$/;
+    const regexUserName = /^[a-z][a-z0-9\._]{1,20}$/;
     //const minLengthRegExp   = /.{6,10}/;
     //const maxLengthRegExp   = /.{,10}/;
     //const regexUserName = /^[a-z][a-z0-9\.]$/;

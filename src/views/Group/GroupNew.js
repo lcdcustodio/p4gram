@@ -131,7 +131,8 @@ const GroupNew = () => {
 
     setGroupUserName(input)
 
-    const regexUserName = /^[a-z][a-z0-9\.]{1,20}$/;
+    //const regexUserName = /^[a-z][a-z0-9\.]{1,20}$/;
+    const regexUserName = /^[a-z][a-z0-9\._]{1,20}$/;
     if(input.length < 6 || input.length > 10){    
 
       setMsgGroupUserNameError('Deve ter de 6 à 10 caracteres');

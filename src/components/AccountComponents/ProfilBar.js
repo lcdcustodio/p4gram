@@ -23,7 +23,7 @@ import { auth } from '../../services/config_firebase';
 const ProfilBar = ({route}) => {
 
   console.log('ProfilBar');
-  console.log(route);
+  //console.log(route);
   //console.log(route.username);
 
   const bottomSheet = useRef();
