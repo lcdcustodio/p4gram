@@ -5,13 +5,13 @@ import { getStorage } from "firebase/storage";
 
 
 const firebaseConfig = {
-    apiKey: "AIzaSyB2fPdMIZrWhqf3uuX_LhrChbShsJR00bQ",
-    authDomain: "blueberry-ftv.firebaseapp.com",
-    projectId: "blueberry-ftv",
-    storageBucket: "blueberry-ftv.appspot.com",
-    messagingSenderId: "466128069165",
-    appId: "1:466128069165:web:279de7f73101fab8198ea4",
-    measurementId: "G-EQHNJ6062H"
+    apiKey: "TBD",
+    authDomain: "TBD",
+    projectId: "TBD",
+    storageBucket: "TBD",
+    messagingSenderId: "TBD",
+    appId: "TBD",
+    measurementId: "TBD"
   };
 
 
